@@ -1,0 +1,125 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [bookstore-app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 180B 0.0s done
+#1 DONE 0.0s
+
+#2 [bookstore-api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 720B done
+#2 DONE 0.0s
+
+#3 [bookstore-app internal] load metadata for docker.io/library/node:18
+#3 DONE 1.1s
+
+#4 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
+#4 DONE 1.1s
+
+#5 [bookstore-app internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [bookstore-app 1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
+#6 DONE 0.0s
+
+#7 [bookstore-api internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.0s
+
+#8 [bookstore-api 1/5] FROM docker.io/library/python:3.9-slim@sha256:aff2066ec8914f7383e115bbbcde4d24da428eac377b0d4bb73806de992d240f
+#8 DONE 0.0s
+
+#9 [bookstore-api internal] load build context
+#9 transferring context: 274.66kB 0.1s done
+#9 DONE 0.2s
+
+#10 [bookstore-api 3/5] COPY requirements.txt requirements.txt
+#10 CACHED
+
+#11 [bookstore-api 4/5] RUN pip3 install --no-cache-dir -r requirements.txt
+#11 CACHED
+
+#12 [bookstore-api 2/5] WORKDIR /app
+#12 CACHED
+
+#13 [bookstore-api 5/5] COPY . .
+#13 CACHED
+
+#14 [bookstore-api] exporting to image
+#14 exporting layers done
+#14 writing image sha256:9bb8e54c8ca48b8022325e472cea42c53c778bf9e69c55cd9fa19362c64e52a8 done
+#14 naming to docker.io/library/docker-compose-bookstore-api
+#14 naming to docker.io/library/docker-compose-bookstore-api done
+#14 DONE 0.0s
+
+#15 [bookstore-api] resolving provenance for metadata file
+#15 DONE 0.0s
+
+#16 [bookstore-app internal] load build context
+#16 transferring context: 467.89MB 3.6s done
+#16 DONE 3.6s
+
+#17 [bookstore-app 2/5] WORKDIR /app
+#17 CACHED
+
+#18 [bookstore-app 3/5] COPY package*.json ./
+#18 DONE 0.5s
+
+#19 [bookstore-app 4/5] RUN npm install
+#19 1.139 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+#19 1.619 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#19 2.383 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+#19 2.388 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#19 2.422 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+#19 2.543 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#19 7.113 
+#19 7.113 added 375 packages, and audited 376 packages in 7s
+#19 7.113 
+#19 7.113 145 packages are looking for funding
+#19 7.113   run `npm fund` for details
+#19 7.132 
+#19 7.132 1 low severity vulnerability
+#19 7.132 
+#19 7.132 To address all issues (including breaking changes), run:
+#19 7.132   npm audit fix --force
+#19 7.132 
+#19 7.132 Run `npm audit` for details.
+#19 7.134 npm notice
+#19 7.134 npm notice New major version of npm available! 10.8.2 -> 11.4.1
+#19 7.134 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+#19 7.134 npm notice To update run: npm install -g npm@11.4.1
+#19 7.134 npm notice
+#19 DONE 7.5s
+
+#20 [bookstore-app 5/5] COPY . .
+#20 DONE 3.1s
+
+#21 [bookstore-app] exporting to image
+#21 exporting layers
+#21 exporting layers 1.6s done
+#21 writing image sha256:7e134578114c9e0a11c3552a7f90adef9cdfa279eac5988679c783d868c3591c
+#21 writing image sha256:7e134578114c9e0a11c3552a7f90adef9cdfa279eac5988679c783d868c3591c done
+#21 naming to docker.io/library/docker-compose-bookstore-app done
+#21 DONE 1.6s
+
+#22 [bookstore-app] resolving provenance for metadata file
+#22 DONE 0.0s
+Attaching to bookstore-api-1, bookstore-app-1
+bookstore-app-1  | 
+bookstore-app-1  | > murabei-refactoring-test@0.1.0 dev
+bookstore-app-1  | > npx next dev
+bookstore-app-1  | 
+bookstore-api-1  |  * Serving Flask app 'app'
+bookstore-api-1  |  * Debug mode: off
+bookstore-app-1  |   ▲ Next.js 14.2.25
+bookstore-app-1  |   - Local:        http://localhost:3000
+bookstore-app-1  | 
+bookstore-app-1  |  ✓ Starting...
+bookstore-app-1  |  ✓ Ready in 1710ms
+bookstore-app-1  |  ○ Compiling / ...
+bookstore-app-1  |  ✓ Compiled / in 3.6s (512 modules)
+bookstore-app-1  |  GET / 200 in 3952ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 3.7s (514 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 3414ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 3510ms
+bookstore-app-1  |  GET /favicon.ico 200 in 10ms
