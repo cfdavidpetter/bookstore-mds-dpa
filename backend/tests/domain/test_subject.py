@@ -8,6 +8,7 @@ def test_should_create_subject():
   assert subject.title == "Romance Books"
   assert subject.slug == "romance-books"
 
-  subject: Subject = Subject(id=1, title="Romance Books", slug="romance")
+  subject: Subject = Subject(title="Romance Books", slug="romance")
 
+  assert subject.id is None
   assert subject.slug == "romance"

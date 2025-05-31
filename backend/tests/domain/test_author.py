@@ -8,6 +8,7 @@ def test_should_create_author():
   assert author.title == "Murilo F. Silva"
   assert author.slug == "murilo-f-silva"
 
-  author: Author = Author(id=1, title="Murilo", biography="Murilo is a writer books", slug="mrl")
+  author: Author = Author(title="Murilo", biography="Murilo is a writer books", slug="mrl")
 
+  assert author.id is None
   assert author.slug == "mrl"

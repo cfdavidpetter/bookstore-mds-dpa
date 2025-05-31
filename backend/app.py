@@ -4,17 +4,20 @@ import sqlite3
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 
+from src.endpoints.author_endpoints import author_endpoints
+
 app = Flask(__name__)
 CORS(app)
 
+# Register endpoints
+app.register_blueprint(author_endpoints)
 
 @app.route("/", methods=["GET"])
 def hello_world():
     return "Hello, World!"
 
+
 # GET /api/v1/books - returns a list of all books
-
-
 @app.route('/api/v1/books', methods=['GET'])
 def get_books():
     # Get the page and page_size parameters from the request arguments
@@ -29,43 +32,21 @@ def get_books():
 
 
 # GET /api/v1/books/author/<author> - returns a list of all books by the given author
-
-
 @app.route('/api/v1/books/author/<author_slug>', methods=['GET'])
 def get_books_by_author(author_slug):
     return jsonify(get_books_by_author_name(author_slug))
 
+
 # GET /api/v1/books/subject/<subject_slug> - returns a list of all books by the given subject
-
-
 @app.route('/api/v1/books/subjects', methods=['GET'])
 def get_books_by_subject():
     return jsonify(get_books_by_subject())
 
+
 # GET /api/v1/books/subjects/<subject_slug> - returns a list of books by the given subject
-
-
 @app.route('/api/v1/books/subjects/<subject>', methods=['GET'])
 def books_by_subject_slug(subject):
     return jsonify(get_books_by_subject_slug(subject))
-
-# GET /api/v1/authors - returns a list of all authors
-
-
-@app.route('/api/v1/authors', methods=['GET'])
-def get_all_authors():
-    return jsonify(get_authors())
-
-# POST /api/v1/books - creates a new book
-
-
-@app.route('/api/v1/books', methods=['POST'])
-def create_book():
-
-    # Get the book data from the request body
-    book_data = request.get_json()
-
-    return jsonify(create_new_book(book_data))
 
 
 def get_all_books(page=1, page_size=10):
@@ -95,32 +76,6 @@ def get_all_books(page=1, page_size=10):
 
     # Return the books as a JSON response
     return book_list
-
-
-def get_authors():
-    conn = sqlite3.connect('db.sqlite')
-    cursor = conn.cursor()
-
-    # Execute a SELECT query to fetch all authors
-    cursor.execute('SELECT * FROM author;')
-    authors = cursor.fetchall()
-
-    author_list = []
-
-    for author in authors:
-        author_dict = {
-            'id': author[0],
-            'title': author[1],
-            'slug': author[2],
-            'biography': author[3]
-        }
-        author_list.append(author_dict)
-
-    # Close the database connection
-    conn.close()
-
-    # Return the authors as a JSON response
-    return author_list
 
 
 def get_books_by_author_name(author_slug):

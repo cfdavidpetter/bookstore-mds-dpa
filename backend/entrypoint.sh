@@ -6,4 +6,4 @@ if [ ! -d "venv" ]; then
   ./venv/bin/pip install -r requirements.txt
 fi
 
-exec ./venv/bin/flask --app app run --host=0.0.0.0
+exec ./venv/bin/flask --app app run --host=0.0.0.0 --debug

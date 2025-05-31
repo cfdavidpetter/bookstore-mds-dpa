@@ -1,9 +1,10 @@
 from slugify import slugify
 from typing import Optional
+
 from pydantic import BaseModel, model_validator
 
 class DomainBase(BaseModel):
-  id: int
+  id: Optional[int] = None
   title: str
   slug: Optional[str] = None
 

@@ -1,7 +1,9 @@
 from enum import Enum
+
 from src.domain.base import DomainBase
 from src.domain.author import Author
 from src.domain.subject import Subject
+
 
 class BookFormat(str, Enum):
   PAPERBACK = "Paperback"
