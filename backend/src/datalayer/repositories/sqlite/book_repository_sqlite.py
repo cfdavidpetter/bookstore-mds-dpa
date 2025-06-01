@@ -1,11 +1,12 @@
-from typing import List, Optional
 import logging
+from typing import Optional
 
 from src.datalayer.interfaces.book_repository_interface import BookRepositoryInterface
 from src.datalayer.repositories.sqlite.connection_sqlite import DatabaseConnectionSqlite
 from src.datalayer.repositories.sqlite.schema.book import Book as BookSchema
-from src.domain.book import Book
 from src.datalayer.repositories.sqlite.adapter.book_adapter import BookAdapter
+from src.datalayer.repositories.pagination import DEFAULT_PAGE, DEFAULT_PAGE_SIZE, PaginatedResponse
+from src.domain.book import Book
 
 
 # Configure logging
@@ -36,13 +37,24 @@ class BookRepositorySqlite(BookRepositoryInterface):
     return BookAdapter.schema_to_domain(result[0])
 
 
-  def list(self) -> List[Book]:
+  def list(self, 
+           page: int = DEFAULT_PAGE, 
+           page_size: int = DEFAULT_PAGE_SIZE) -> PaginatedResponse[Book]:
+    offset = (page - 1) * page_size
+
+    total_count = self.db.get_total_count("book")
     results = self.db.execute(
-      f"SELECT {self.columns_str} FROM book",
+      f"SELECT {self.columns_str} FROM book LIMIT {page_size} OFFSET {offset}",
       fetch=True
     )
-      
-    return BookAdapter.schema_list_to_domain_list(results)
+
+    return PaginatedResponse[Book](
+      data=BookAdapter.schema_list_to_domain_list(results),
+      total=total_count,
+      per_page=page_size,
+      from_index=offset,
+      current_page=page,
+    )
 
 
   def create(self, entity: Book) -> Book:

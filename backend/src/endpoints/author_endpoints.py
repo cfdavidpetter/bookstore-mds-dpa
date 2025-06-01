@@ -1,13 +1,18 @@
 from flask import Blueprint, jsonify, request
+from src.datalayer.repositories.pagination import DEFAULT_PAGE, DEFAULT_PAGE_SIZE
 from src.factories.author_factory import AuthorFactory
 
 author_endpoints = Blueprint('authors', __name__, url_prefix='/api/v1')
 
 @author_endpoints.route('/authors', methods=['GET'])
 def get_all_authors():
+    page = request.args.get("page", DEFAULT_PAGE, type=int)
+    page_size = request.args.get("page_size", DEFAULT_PAGE_SIZE, type=int)
+
     service = AuthorFactory.service()
-    authors = service.list()
-    return jsonify([author.model_dump() for author in authors])
+    authors = service.list(page=page, page_size=page_size)
+
+    return jsonify(authors.model_dump())
 
 @author_endpoints.route('/authors/<author_id>', methods=['GET'])
 def get_author_by_id(author_id):

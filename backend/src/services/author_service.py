@@ -1,8 +1,9 @@
 
 from dataclasses import dataclass
-from typing import List, Optional
+from typing import Optional
 
 from src.datalayer.interfaces.author_repository_interface import AuthorRepositoryInterface
+from src.datalayer.repositories.pagination import DEFAULT_PAGE, DEFAULT_PAGE_SIZE, PaginatedResponse
 from src.services.base import ServiceBase
 from src.domain.author import Author
 
@@ -14,8 +15,10 @@ class AuthorService(ServiceBase):
   def get_by_id(self, id: int) -> Optional[Author]:
     return self.repository.get_by_id(id)
   
-  def list(self) -> List[Author]:
-    return self.repository.list()
+  def list(self, 
+           page: Optional[int] = DEFAULT_PAGE, 
+           page_size: Optional[int] = DEFAULT_PAGE_SIZE) -> PaginatedResponse[Author]:
+    return self.repository.list(page, page_size)
   
   def create(self, author: dict) -> Author:
     return self.repository.create(Author(**author))

@@ -1,8 +1,9 @@
-from typing import List, Optional
+from typing import Optional
 
 from src.datalayer.interfaces.author_repository_interface import AuthorRepositoryInterface
 from src.datalayer.repositories.sqlite.connection_sqlite import DatabaseConnectionSqlite
 from src.datalayer.repositories.sqlite.schema.author import Author as AuthorSchema
+from src.datalayer.repositories.pagination import DEFAULT_PAGE, DEFAULT_PAGE_SIZE, PaginatedResponse
 from src.domain.author import Author
 
 
@@ -35,21 +36,32 @@ class AuthorRepositorySqlite(AuthorRepositoryInterface):
     )
 
 
-  def list(self) -> List[Author]:
+  def list(self, 
+           page: int = DEFAULT_PAGE, 
+           page_size: int = DEFAULT_PAGE_SIZE) -> PaginatedResponse[Author]:
+    offset = (page - 1) * page_size
+
+    total_count = self.db.get_total_count("author")
     results = self.db.execute(
-      f"SELECT {self.columns_str} FROM author",
-      fetch=True
+      f"SELECT {self.columns_str} FROM author LIMIT {page_size} OFFSET {offset}",
+      fetch=True  
     )
       
-    return [
-      Author(
-        id=author_data[0],
-        title=author_data[1],
-        slug=author_data[2],
-        biography=author_data[3]
-      )
-      for author_data in results
-    ]
+    return PaginatedResponse[Author](
+      data=[
+        Author(
+          id=author_data[0],
+          title=author_data[1],
+          slug=author_data[2],
+          biography=author_data[3]
+        )
+        for author_data in results
+      ],
+      total=total_count,
+      per_page=page_size,
+      from_index=offset,
+      current_page=page,
+    )
 
 
   def create(self, entity: Author) -> Author:

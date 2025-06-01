@@ -1,13 +1,18 @@
 from flask import Blueprint, jsonify, request
+from src.datalayer.repositories.pagination import DEFAULT_PAGE, DEFAULT_PAGE_SIZE
 from src.factories.book_factory import BookFactory
 
 book_endpoints = Blueprint('books', __name__, url_prefix='/api/v1')
 
 @book_endpoints.route('/books', methods=['GET'])
 def get_all_books():
+    page = request.args.get("page", DEFAULT_PAGE, type=int)
+    page_size = request.args.get("page_size", DEFAULT_PAGE_SIZE, type=int)
+    
     service = BookFactory.service()
-    books = service.list()
-    return jsonify([book.model_dump() for book in books])
+    books = service.list(page=page, page_size=page_size)
+    
+    return jsonify(books.model_dump())
 
 @book_endpoints.route('/books/<book_id>', methods=['GET'])
 def get_book_by_id(book_id):
