@@ -1,86 +1,89 @@
 #0 building with "desktop-linux" instance using docker driver
 
-#1 [bookstore-app internal] load build definition from Dockerfile
-#1 transferring dockerfile: 180B done
+#1 [bookstore-api internal] load build definition from Dockerfile
+#1 transferring dockerfile: 551B done
 #1 DONE 0.0s
 
-#2 [bookstore-api internal] load build definition from Dockerfile
-#2 transferring dockerfile: 551B done
+#2 [bookstore-app internal] load build definition from Dockerfile
+#2 transferring dockerfile: 180B done
 #2 DONE 0.0s
 
 #3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
 #3 ...
 
 #4 [bookstore-app internal] load metadata for docker.io/library/node:18
-#4 DONE 1.2s
+#4 DONE 1.3s
+
+#3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
+#3 DONE 1.3s
 
 #5 [bookstore-app internal] load .dockerignore
 #5 transferring context: 2B done
 #5 DONE 0.0s
 
-#3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
-#3 DONE 1.2s
-
-#6 [bookstore-app 1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
+#6 [bookstore-api internal] load .dockerignore
+#6 transferring context: 2B done
 #6 DONE 0.0s
 
-#7 [bookstore-api internal] load .dockerignore
-#7 transferring context: 2B done
+#7 [bookstore-api 1/4] FROM docker.io/library/python:3.9-slim@sha256:aff2066ec8914f7383e115bbbcde4d24da428eac377b0d4bb73806de992d240f
 #7 DONE 0.0s
 
-#8 [bookstore-api 1/4] FROM docker.io/library/python:3.9-slim@sha256:aff2066ec8914f7383e115bbbcde4d24da428eac377b0d4bb73806de992d240f
+#8 [bookstore-app 1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
 #8 DONE 0.0s
 
 #9 [bookstore-api internal] load build context
-#9 transferring context: 313.77kB 0.1s done
-#9 DONE 0.1s
+#9 transferring context: 10.13MB 0.3s done
+#9 DONE 0.3s
 
 #10 [bookstore-api 2/4] WORKDIR /app
 #10 CACHED
 
-#11 [bookstore-app internal] load build context
-#11 transferring context: 1.88MB 0.7s done
-#11 DONE 0.7s
+#11 [bookstore-api 3/4] COPY . .
+#11 ...
 
-#12 [bookstore-app 2/5] WORKDIR /app
-#12 CACHED
+#12 [bookstore-app internal] load build context
+#12 transferring context: 13.56MB 0.8s done
+#12 DONE 0.9s
 
-#13 [bookstore-app 3/5] COPY package*.json ./
+#13 [bookstore-app 2/5] WORKDIR /app
 #13 CACHED
 
-#14 [bookstore-app 4/5] RUN npm install
+#14 [bookstore-app 3/5] COPY package*.json ./
 #14 CACHED
 
-#15 [bookstore-app 5/5] COPY . .
-#15 ...
+#15 [bookstore-app 4/5] RUN npm install
+#15 CACHED
 
-#16 [bookstore-api 3/4] COPY . .
-#16 DONE 1.9s
+#16 [bookstore-app 5/5] COPY . .
+#16 ...
+
+#11 [bookstore-api 3/4] COPY . .
+#11 DONE 2.0s
 
 #17 [bookstore-api 4/4] RUN chmod +x entrypoint.sh
-#17 DONE 0.5s
+#17 DONE 0.3s
 
-#15 [bookstore-app 5/5] COPY . .
-#15 ...
+#16 [bookstore-app 5/5] COPY . .
+#16 ...
 
 #18 [bookstore-api] exporting to image
 #18 exporting layers 0.2s done
-#18 writing image sha256:abfa2315f366defbe384634c6f9f8cd053565811b172c6792aabc518d34b9b2a done
+#18 writing image sha256:5898e4a3401f796ebade903077331dbe6cc3c6739745adf48eef005bfaf8b153 done
 #18 naming to docker.io/library/docker-compose-bookstore-api done
 #18 DONE 0.2s
 
 #19 [bookstore-api] resolving provenance for metadata file
 #19 DONE 0.0s
 
-#15 [bookstore-app 5/5] COPY . .
-#15 DONE 4.9s
+#16 [bookstore-app 5/5] COPY . .
+#16 DONE 5.4s
 
 #20 [bookstore-app] exporting to image
-#20 exporting layers 1.1s done
-#20 writing image sha256:a0b0665bc5786a9edc01358d39d8bbbd009a94917fa34bc0df93349c651d8e8c
-#20 writing image sha256:a0b0665bc5786a9edc01358d39d8bbbd009a94917fa34bc0df93349c651d8e8c done
+#20 exporting layers 1.3s done
+#20 writing image sha256:799f7b2bdb73a6215c70bf3899e9c053f3ea2a60517ff400991b3337b0e16fe1
+#20 writing image sha256:799f7b2bdb73a6215c70bf3899e9c053f3ea2a60517ff400991b3337b0e16fe1 done
 #20 naming to docker.io/library/docker-compose-bookstore-app done
-#20 DONE 1.2s
+#20 DONE 1.3s
 
 #21 [bookstore-app] resolving provenance for metadata file
 #21 DONE 0.0s
@@ -95,8 +98,86 @@ bookstore-app-1  |   ▲ Next.js 14.2.25
 bookstore-app-1  |   - Local:        http://localhost:3000
 bookstore-app-1  | 
 bookstore-app-1  |  ✓ Starting...
-bookstore-app-1  |  ✓ Ready in 2.6s
-bookstore-api-1  | {'title': 'test 01', 'biography': 'biography of test 01'}
-bookstore-api-1  | --------------------------------
-bookstore-api-1  | id=None title='test 01' slug='test-01' biography='biography of test 01'
-bookstore-api-1  | --------------------------------
+bookstore-app-1  |  ✓ Ready in 2.4s
+bookstore-app-1  |  ○ Compiling / ...
+bookstore-app-1  |  ✓ Compiled / in 1955ms (494 modules)
+bookstore-app-1  |  GET / 200 in 2304ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 1030ms (514 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 867ms
+bookstore-app-1  |  GET /favicon.ico 200 in 797ms
+bookstore-app-1  |  GET /favicon.ico 200 in 36ms
+bookstore-app-1  |  GET / 200 in 89ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 39ms
+bookstore-app-1  |  GET /favicon.ico 200 in 26ms
+bookstore-app-1  |  GET /favicon.ico 200 in 8ms
+bookstore-app-1  |  GET / 200 in 38ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
+bookstore-app-1  |  GET /favicon.ico 200 in 15ms
+bookstore-app-1  |  GET /favicon.ico 200 in 7ms
+bookstore-app-1  |  GET / 200 in 34ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 24ms
+bookstore-app-1  |  GET /favicon.ico 200 in 12ms
+bookstore-app-1  |  GET /favicon.ico 200 in 33ms
+bookstore-app-1  |  GET / 200 in 38ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+bookstore-app-1  |  GET /favicon.ico 200 in 32ms
+bookstore-app-1  |  GET /favicon.ico 200 in 13ms
+bookstore-app-1  |  GET / 200 in 40ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+bookstore-app-1  |  GET /favicon.ico 200 in 9ms
+bookstore-app-1  |  GET /favicon.ico 200 in 7ms
+bookstore-app-1  |  GET / 200 in 72ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 63ms
+bookstore-app-1  |  GET /favicon.ico 200 in 33ms
+bookstore-app-1  |  GET /favicon.ico 200 in 17ms
+bookstore-app-1  |  GET / 200 in 57ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 43ms
+bookstore-app-1  |  GET /favicon.ico 200 in 19ms
+bookstore-app-1  |  GET /favicon.ico 200 in 34ms
+bookstore-app-1  |  ○ Compiling /_error ...
+bookstore-app-1  |  GET / 500 in 1776ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 500 in 147ms
+bookstore-app-1  |  GET /_next/static/webpack/364a442778adc4e8.webpack.hot-update.json 500 in 380ms
+bookstore-app-1  |  GET /favicon.ico 500 in 405ms
+bookstore-app-1  |  GET / 500 in 16ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 500 in 29ms
+bookstore-app-1  |  GET /favicon.ico 500 in 27ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 420ms (739 modules)
+bookstore-app-1  |  GET / 200 in 157ms
+bookstore-app-1  |  GET /_next/static/webpack/364a442778adc4e8.webpack.hot-update.json 404 in 541ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 23ms
+bookstore-app-1  |  GET /favicon.ico 200 in 33ms
+bookstore-app-1  |  GET /favicon.ico 200 in 35ms
+bookstore-app-1  |  GET / 200 in 37ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+bookstore-app-1  |  GET /favicon.ico 200 in 23ms
+bookstore-app-1  |  GET /favicon.ico 200 in 13ms
+bookstore-app-1  |  ✓ Compiled in 208ms (753 modules)
+bookstore-app-1  |  GET / 200 in 208ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 44ms
+bookstore-app-1  |  GET /favicon.ico 200 in 36ms
+bookstore-app-1  |  GET /favicon.ico 200 in 31ms
+bookstore-app-1  |  GET / 200 in 36ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 30ms
+bookstore-app-1  |  GET /favicon.ico 200 in 14ms
+bookstore-app-1  |  GET /favicon.ico 200 in 29ms
+bookstore-app-1  |  GET / 200 in 44ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+bookstore-app-1  |  GET /favicon.ico 200 in 11ms
+bookstore-app-1  |  GET /favicon.ico 200 in 13ms
+bookstore-app-1  |  GET / 200 in 72ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+bookstore-app-1  |  GET /favicon.ico 200 in 13ms
+bookstore-app-1  |  GET /favicon.ico 200 in 31ms
+bookstore-app-1  |  ✓ Compiled in 309ms (751 modules)
+bookstore-app-1  |  ✓ Compiled in 249ms (751 modules)
+bookstore-app-1  |  ✓ Compiled in 212ms (717 modules)
+bookstore-app-1  |  ✓ Compiled in 243ms (717 modules)
+bookstore-app-1  |  ✓ Compiled in 394ms (717 modules)
+bookstore-app-1  |  GET / 200 in 139ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 277ms (706 modules)
+bookstore-app-1  |  ✓ Compiled (737 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 572ms
+bookstore-app-1  |  GET /favicon.ico 200 in 408ms
+bookstore-app-1  |  GET /favicon.ico 200 in 10ms

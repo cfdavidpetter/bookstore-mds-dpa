@@ -5,12 +5,14 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 from src.endpoints.author_endpoints import author_endpoints
+from src.endpoints.book_endpoints import book_endpoints
 
 app = Flask(__name__)
 CORS(app)
 
 # Register endpoints
 app.register_blueprint(author_endpoints)
+app.register_blueprint(book_endpoints)
 
 @app.route("/", methods=["GET"])
 def hello_world():
@@ -18,17 +20,17 @@ def hello_world():
 
 
 # GET /api/v1/books - returns a list of all books
-@app.route('/api/v1/books', methods=['GET'])
-def get_books():
-    # Get the page and page_size parameters from the request arguments
-    page = request.args.get('page', default=1, type=int)
-    page_size = request.args.get('page_size', default=10, type=int)
+# @app.route('/api/v1/books', methods=['GET'])
+# def get_books():
+#     # Get the page and page_size parameters from the request arguments
+#     page = request.args.get('page', default=1, type=int)
+#     page_size = request.args.get('page_size', default=10, type=int)
 
-    # Call the get_all_books function with the page and page_size parameters
-    books = get_all_books(page=page, page_size=page_size)
+#     # Call the get_all_books function with the page and page_size parameters
+#     books = get_all_books(page=page, page_size=page_size)
 
-    # Return the books as a JSON response
-    return jsonify(books)
+#     # Return the books as a JSON response
+#     return jsonify(books)
 
 
 # GET /api/v1/books/author/<author> - returns a list of all books by the given author
@@ -49,33 +51,33 @@ def books_by_subject_slug(subject):
     return jsonify(get_books_by_subject_slug(subject))
 
 
-def get_all_books(page=1, page_size=10):
-    conn = sqlite3.connect('db.sqlite')
-    cursor = conn.cursor()
+# def get_all_books(page=1, page_size=10):
+#     conn = sqlite3.connect('db.sqlite')
+#     cursor = conn.cursor()
 
-    # Calculate the offset based on the page number and page size
-    offset = (page - 1) * page_size
+#     # Calculate the offset based on the page number and page size
+#     offset = (page - 1) * page_size
 
-    # Execute a SELECT query with pagination
-    cursor.execute(f'SELECT * FROM book LIMIT {page_size} OFFSET {offset};')
-    books = cursor.fetchall()
+#     # Execute a SELECT query with pagination
+#     cursor.execute(f'SELECT * FROM book LIMIT {page_size} OFFSET {offset};')
+#     books = cursor.fetchall()
 
-    # Convert the books data to a list of dictionaries
-    book_list = []
-    for book in books:
-        book_dict = {
-            'id': book[0],
-            'title': book[1],
-            'author': book[2],
-            'biography': book[4]
-        }
-        book_list.append(book_dict)
+#     # Convert the books data to a list of dictionaries
+#     book_list = []
+#     for book in books:
+#         book_dict = {
+#             'id': book[0],
+#             'title': book[1],
+#             'author': book[2],
+#             'biography': book[4]
+#         }
+#         book_list.append(book_dict)
 
-    # Close the database connection
-    conn.close()
+#     # Close the database connection
+#     conn.close()
 
-    # Return the books as a JSON response
-    return book_list
+#     # Return the books as a JSON response
+#     return book_list
 
 
 def get_books_by_author_name(author_slug):

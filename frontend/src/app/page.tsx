@@ -4,9 +4,12 @@ import React, { useEffect, useState } from 'react';
 
 interface Book {
   id: number;
-  author: string;
+  author: {
+    id: number;
+    title: string;
+    biography?: string;
+  };
   title: string;
-  biography?: string;
 }
 
 export default function Home() {
@@ -36,9 +39,9 @@ export default function Home() {
 
   const filteredDocs = documents.filter((doc) => {
     return (
-      doc.author.toLowerCase().includes(nameFilter.toLowerCase()) &&
+      doc.author.title.toLowerCase().includes(nameFilter.toLowerCase()) &&
       doc.title.toLowerCase().includes(stateFilter.toLowerCase()) &&
-      doc.biography?.toLowerCase().includes(docNumberFilter.toLowerCase())
+      doc.author.biography?.toLowerCase().includes(docNumberFilter.toLowerCase())
     );
   });
 
@@ -86,9 +89,9 @@ export default function Home() {
           {filteredDocs.map((doc) => (
             <tr key={doc.id}>
               <td>{doc.id}</td>
-              <td>{doc.author}</td>
+              <td>{doc.author.title}</td>
               <td>{doc.title}</td>
-              <td>{doc.biography}</td>
+              <td>{doc.author.biography}</td>
             </tr>
           ))}
         </tbody>

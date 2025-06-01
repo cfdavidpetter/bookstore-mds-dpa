@@ -1,5 +1,7 @@
+from typing import Optional
+
 from src.domain.base import DomainBase
 
 
 class Author(DomainBase):
-  biography: str
+  biography: Optional[str] = None
