@@ -9,19 +9,16 @@
 #2 DONE 0.0s
 
 #3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
-#3 ...
+#3 DONE 1.3s
 
 #4 [bookstore-app internal] load metadata for docker.io/library/node:18
 #4 DONE 1.3s
 
-#3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
-#3 DONE 1.3s
-
-#5 [bookstore-app internal] load .dockerignore
+#5 [bookstore-api internal] load .dockerignore
 #5 transferring context: 2B done
 #5 DONE 0.0s
 
-#6 [bookstore-api internal] load .dockerignore
+#6 [bookstore-app internal] load .dockerignore
 #6 transferring context: 2B done
 #6 DONE 0.0s
 
@@ -38,52 +35,70 @@
 #10 [bookstore-api 2/4] WORKDIR /app
 #10 CACHED
 
-#11 [bookstore-api 3/4] COPY . .
-#11 ...
+#11 [bookstore-app internal] load build context
+#11 transferring context: 122.66MB 2.4s done
+#11 DONE 2.4s
 
-#12 [bookstore-app internal] load build context
-#12 transferring context: 13.56MB 0.8s done
-#12 DONE 0.9s
+#12 [bookstore-api 3/4] COPY . .
+#12 DONE 2.0s
 
 #13 [bookstore-app 2/5] WORKDIR /app
 #13 CACHED
 
 #14 [bookstore-app 3/5] COPY package*.json ./
-#14 CACHED
+#14 DONE 0.1s
 
-#15 [bookstore-app 4/5] RUN npm install
-#15 CACHED
+#15 [bookstore-api 4/4] RUN chmod +x entrypoint.sh
+#15 DONE 0.3s
 
-#16 [bookstore-app 5/5] COPY . .
+#16 [bookstore-app 4/5] RUN npm install
 #16 ...
 
-#11 [bookstore-api 3/4] COPY . .
-#11 DONE 2.0s
+#17 [bookstore-api] exporting to image
+#17 exporting layers 0.2s done
+#17 writing image sha256:a87e48c94776c0db4c1d696116a5e65c3c7768c4f0b1d4b085c663e47d0eec3a done
+#17 naming to docker.io/library/docker-compose-bookstore-api done
+#17 DONE 0.2s
 
-#17 [bookstore-api 4/4] RUN chmod +x entrypoint.sh
-#17 DONE 0.3s
+#18 [bookstore-api] resolving provenance for metadata file
+#18 DONE 0.0s
 
-#16 [bookstore-app 5/5] COPY . .
-#16 ...
+#16 [bookstore-app 4/5] RUN npm install
+#16 1.390 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+#16 1.817 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#16 2.642 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+#16 2.690 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+#16 2.770 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#16 3.002 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+#16 8.578 
+#16 8.578 added 430 packages, and audited 431 packages in 8s
+#16 8.578 
+#16 8.578 148 packages are looking for funding
+#16 8.578   run `npm fund` for details
+#16 8.602 
+#16 8.602 1 low severity vulnerability
+#16 8.602 
+#16 8.602 To address all issues (including breaking changes), run:
+#16 8.602   npm audit fix --force
+#16 8.602 
+#16 8.602 Run `npm audit` for details.
+#16 8.604 npm notice
+#16 8.604 npm notice New major version of npm available! 10.8.2 -> 11.4.1
+#16 8.604 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+#16 8.604 npm notice To update run: npm install -g npm@11.4.1
+#16 8.604 npm notice
+#16 DONE 9.4s
 
-#18 [bookstore-api] exporting to image
-#18 exporting layers 0.2s done
-#18 writing image sha256:5898e4a3401f796ebade903077331dbe6cc3c6739745adf48eef005bfaf8b153 done
-#18 naming to docker.io/library/docker-compose-bookstore-api done
-#18 DONE 0.2s
-
-#19 [bookstore-api] resolving provenance for metadata file
-#19 DONE 0.0s
-
-#16 [bookstore-app 5/5] COPY . .
-#16 DONE 5.4s
+#19 [bookstore-app 5/5] COPY . .
+#19 DONE 7.9s
 
 #20 [bookstore-app] exporting to image
-#20 exporting layers 1.3s done
-#20 writing image sha256:799f7b2bdb73a6215c70bf3899e9c053f3ea2a60517ff400991b3337b0e16fe1
-#20 writing image sha256:799f7b2bdb73a6215c70bf3899e9c053f3ea2a60517ff400991b3337b0e16fe1 done
+#20 exporting layers
+#20 exporting layers 1.9s done
+#20 writing image sha256:2bcfb82a59765e8524181ed85ff13c0977acabc68b437e9f12f92f5cbe3631c6
+#20 writing image sha256:2bcfb82a59765e8524181ed85ff13c0977acabc68b437e9f12f92f5cbe3631c6 done
 #20 naming to docker.io/library/docker-compose-bookstore-app done
-#20 DONE 1.3s
+#20 DONE 1.9s
 
 #21 [bookstore-app] resolving provenance for metadata file
 #21 DONE 0.0s
@@ -96,88 +111,358 @@ bookstore-api-1  |  * Serving Flask app 'app'
 bookstore-api-1  |  * Debug mode: on
 bookstore-app-1  |   ▲ Next.js 14.2.25
 bookstore-app-1  |   - Local:        http://localhost:3000
+bookstore-app-1  |   - Environments: .env.local
 bookstore-app-1  | 
 bookstore-app-1  |  ✓ Starting...
-bookstore-app-1  |  ✓ Ready in 2.4s
-bookstore-app-1  |  ○ Compiling / ...
-bookstore-app-1  |  ✓ Compiled / in 1955ms (494 modules)
-bookstore-app-1  |  GET / 200 in 2304ms
+bookstore-app-1  |  ✓ Ready in 2.3s
+bookstore-app-1  |  ○ Compiling /books ...
+bookstore-app-1  |  ✓ Compiled /books in 4.1s (918 modules)
+bookstore-app-1  | process.env {
+bookstore-app-1  |   npm_config_user_agent: 'npm/10.8.2 node/v18.20.8 linux arm64 workspaces/false',
+bookstore-app-1  |   NODE_VERSION: '18.20.8',
+bookstore-app-1  |   HOSTNAME: 'ea1ea051beda',
+bookstore-app-1  |   YARN_VERSION: '1.22.22',
+bookstore-app-1  |   npm_node_execpath: '/usr/local/bin/node',
+bookstore-app-1  |   HOME: '/root',
+bookstore-app-1  |   npm_package_json: '/app/package.json',
+bookstore-app-1  |   npm_config_userconfig: '/root/.npmrc',
+bookstore-app-1  |   npm_config_local_prefix: '/app',
+bookstore-app-1  |   COLOR: '0',
+bookstore-app-1  |   npm_config_prefix: '/usr/local',
+bookstore-app-1  |   npm_config_npm_version: '10.8.2',
+bookstore-app-1  |   npm_config_cache: '/root/.npm',
+bookstore-app-1  |   npm_config_node_gyp: '/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js',
+bookstore-app-1  |   PATH: '/app/node_modules/.bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+bookstore-app-1  |   NODE: '/usr/local/bin/node',
+bookstore-app-1  |   npm_package_name: 'murabei-refactoring-test',
+bookstore-app-1  |   npm_lifecycle_script: 'next',
+bookstore-app-1  |   npm_package_version: '0.1.0',
+bookstore-app-1  |   npm_lifecycle_event: 'npx',
+bookstore-app-1  |   npm_config_globalconfig: '/usr/local/etc/npmrc',
+bookstore-app-1  |   npm_config_init_module: '/root/.npm-init.js',
+bookstore-app-1  |   PWD: '/app',
+bookstore-app-1  |   npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
+bookstore-app-1  |   npm_config_global_prefix: '/usr/local',
+bookstore-app-1  |   npm_command: 'exec',
+bookstore-app-1  |   INIT_CWD: '/app',
+bookstore-app-1  |   EDITOR: 'vi',
+bookstore-app-1  |   NODE_ENV: 'development',
+bookstore-app-1  |   NEXT_RUNTIME: 'nodejs',
+bookstore-app-1  |   NEXT_PRIVATE_WORKER: '1',
+bookstore-app-1  |   NODE_OPTIONS: ' --max-old-space-size=3918',
+bookstore-app-1  |   PORT: '3000',
+bookstore-app-1  |   __NEXT_PRIVATE_ORIGIN: 'http://localhost:3000',
+bookstore-app-1  |   npm_config_noproxy: '',
+bookstore-app-1  |   __NEXT_PROCESSED_ENV: 'true',
+bookstore-app-1  |   APP_URL: 'http://localhost:7721',
+bookstore-app-1  |   NEXT_DEPLOYMENT_ID: '',
+bookstore-app-1  |   __NEXT_OPTIMIZE_FONTS: 'true',
+bookstore-app-1  |   RUST_MIN_STACK: '8388608',
+bookstore-app-1  |   __NEXT_PRIVATE_RUNTIME_TYPE: ''
+bookstore-app-1  | }
+bookstore-app-1  |  GET /books 200 in 4767ms
 bookstore-app-1  |  ○ Compiling /favicon.ico ...
-bookstore-app-1  |  ✓ Compiled /favicon.ico in 1030ms (514 modules)
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 867ms
-bookstore-app-1  |  GET /favicon.ico 200 in 797ms
-bookstore-app-1  |  GET /favicon.ico 200 in 36ms
-bookstore-app-1  |  GET / 200 in 89ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 39ms
-bookstore-app-1  |  GET /favicon.ico 200 in 26ms
-bookstore-app-1  |  GET /favicon.ico 200 in 8ms
-bookstore-app-1  |  GET / 200 in 38ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 17ms
-bookstore-app-1  |  GET /favicon.ico 200 in 15ms
-bookstore-app-1  |  GET /favicon.ico 200 in 7ms
-bookstore-app-1  |  GET / 200 in 34ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 24ms
-bookstore-app-1  |  GET /favicon.ico 200 in 12ms
-bookstore-app-1  |  GET /favicon.ico 200 in 33ms
-bookstore-app-1  |  GET / 200 in 38ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 3.9s (920 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 3613ms
+bookstore-app-1  |  GET /favicon.ico 200 in 3583ms
 bookstore-app-1  |  GET /favicon.ico 200 in 32ms
-bookstore-app-1  |  GET /favicon.ico 200 in 13ms
-bookstore-app-1  |  GET / 200 in 40ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
-bookstore-app-1  |  GET /favicon.ico 200 in 9ms
-bookstore-app-1  |  GET /favicon.ico 200 in 7ms
-bookstore-app-1  |  GET / 200 in 72ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 63ms
-bookstore-app-1  |  GET /favicon.ico 200 in 33ms
-bookstore-app-1  |  GET /favicon.ico 200 in 17ms
-bookstore-app-1  |  GET / 200 in 57ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 43ms
-bookstore-app-1  |  GET /favicon.ico 200 in 19ms
-bookstore-app-1  |  GET /favicon.ico 200 in 34ms
-bookstore-app-1  |  ○ Compiling /_error ...
-bookstore-app-1  |  GET / 500 in 1776ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 500 in 147ms
-bookstore-app-1  |  GET /_next/static/webpack/364a442778adc4e8.webpack.hot-update.json 500 in 380ms
-bookstore-app-1  |  GET /favicon.ico 500 in 405ms
-bookstore-app-1  |  GET / 500 in 16ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 500 in 29ms
-bookstore-app-1  |  GET /favicon.ico 500 in 27ms
-bookstore-app-1  |  ✓ Compiled /favicon.ico in 420ms (739 modules)
-bookstore-app-1  |  GET / 200 in 157ms
-bookstore-app-1  |  GET /_next/static/webpack/364a442778adc4e8.webpack.hot-update.json 404 in 541ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 23ms
-bookstore-app-1  |  GET /favicon.ico 200 in 33ms
-bookstore-app-1  |  GET /favicon.ico 200 in 35ms
-bookstore-app-1  |  GET / 200 in 37ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
-bookstore-app-1  |  GET /favicon.ico 200 in 23ms
-bookstore-app-1  |  GET /favicon.ico 200 in 13ms
-bookstore-app-1  |  ✓ Compiled in 208ms (753 modules)
-bookstore-app-1  |  GET / 200 in 208ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 44ms
-bookstore-app-1  |  GET /favicon.ico 200 in 36ms
-bookstore-app-1  |  GET /favicon.ico 200 in 31ms
-bookstore-app-1  |  GET / 200 in 36ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 30ms
-bookstore-app-1  |  GET /favicon.ico 200 in 14ms
-bookstore-app-1  |  GET /favicon.ico 200 in 29ms
-bookstore-app-1  |  GET / 200 in 44ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
-bookstore-app-1  |  GET /favicon.ico 200 in 11ms
-bookstore-app-1  |  GET /favicon.ico 200 in 13ms
-bookstore-app-1  |  GET / 200 in 72ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
-bookstore-app-1  |  GET /favicon.ico 200 in 13ms
-bookstore-app-1  |  GET /favicon.ico 200 in 31ms
-bookstore-app-1  |  ✓ Compiled in 309ms (751 modules)
-bookstore-app-1  |  ✓ Compiled in 249ms (751 modules)
-bookstore-app-1  |  ✓ Compiled in 212ms (717 modules)
-bookstore-app-1  |  ✓ Compiled in 243ms (717 modules)
-bookstore-app-1  |  ✓ Compiled in 394ms (717 modules)
-bookstore-app-1  |  GET / 200 in 139ms
-bookstore-app-1  |  ✓ Compiled /favicon.ico in 277ms (706 modules)
-bookstore-app-1  |  ✓ Compiled (737 modules)
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 572ms
-bookstore-app-1  |  GET /favicon.ico 200 in 408ms
+bookstore-app-1  | process.env {
+bookstore-app-1  |   npm_config_user_agent: 'npm/10.8.2 node/v18.20.8 linux arm64 workspaces/false',
+bookstore-app-1  |   NODE_VERSION: '18.20.8',
+bookstore-app-1  |   HOSTNAME: 'ea1ea051beda',
+bookstore-app-1  |   YARN_VERSION: '1.22.22',
+bookstore-app-1  |   npm_node_execpath: '/usr/local/bin/node',
+bookstore-app-1  |   HOME: '/root',
+bookstore-app-1  |   npm_package_json: '/app/package.json',
+bookstore-app-1  |   npm_config_userconfig: '/root/.npmrc',
+bookstore-app-1  |   npm_config_local_prefix: '/app',
+bookstore-app-1  |   COLOR: '0',
+bookstore-app-1  |   npm_config_prefix: '/usr/local',
+bookstore-app-1  |   npm_config_npm_version: '10.8.2',
+bookstore-app-1  |   npm_config_cache: '/root/.npm',
+bookstore-app-1  |   npm_config_node_gyp: '/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js',
+bookstore-app-1  |   PATH: '/app/node_modules/.bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+bookstore-app-1  |   NODE: '/usr/local/bin/node',
+bookstore-app-1  |   npm_package_name: 'murabei-refactoring-test',
+bookstore-app-1  |   npm_lifecycle_script: 'next',
+bookstore-app-1  |   npm_package_version: '0.1.0',
+bookstore-app-1  |   npm_lifecycle_event: 'npx',
+bookstore-app-1  |   npm_config_globalconfig: '/usr/local/etc/npmrc',
+bookstore-app-1  |   npm_config_init_module: '/root/.npm-init.js',
+bookstore-app-1  |   PWD: '/app',
+bookstore-app-1  |   npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
+bookstore-app-1  |   npm_config_global_prefix: '/usr/local',
+bookstore-app-1  |   npm_command: 'exec',
+bookstore-app-1  |   INIT_CWD: '/app',
+bookstore-app-1  |   EDITOR: 'vi',
+bookstore-app-1  |   NODE_ENV: 'development',
+bookstore-app-1  |   NEXT_RUNTIME: 'nodejs',
+bookstore-app-1  |   NEXT_PRIVATE_WORKER: '1',
+bookstore-app-1  |   NODE_OPTIONS: ' --max-old-space-size=3918',
+bookstore-app-1  |   PORT: '3000',
+bookstore-app-1  |   __NEXT_PRIVATE_ORIGIN: 'http://localhost:3000',
+bookstore-app-1  |   npm_config_noproxy: '',
+bookstore-app-1  |   __NEXT_PROCESSED_ENV: 'true',
+bookstore-app-1  |   APP_URL: 'http://localhost:7721',
+bookstore-app-1  |   NEXT_DEPLOYMENT_ID: '',
+bookstore-app-1  |   __NEXT_OPTIMIZE_FONTS: 'true',
+bookstore-app-1  |   RUST_MIN_STACK: '8388608',
+bookstore-app-1  |   __NEXT_PRIVATE_RUNTIME_TYPE: ''
+bookstore-app-1  | }
+bookstore-app-1  |  GET /books 200 in 98ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 83ms
+bookstore-app-1  |  GET /favicon.ico 200 in 32ms
+bookstore-app-1  |  GET /favicon.ico 200 in 26ms
+bookstore-app-1  |  GET /undefined/api/v1/books 404 in 45ms
+bookstore-app-1  |  GET /undefined/api/v1/books 404 in 22ms
+bookstore-app-1  |  GET /books 200 in 77ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 27ms
+bookstore-app-1  |  GET /favicon.ico 200 in 44ms
+bookstore-app-1  |  GET /undefined/api/v1/books 404 in 32ms
+bookstore-app-1  |  GET /favicon.ico 200 in 38ms
+bookstore-app-1  |  GET /undefined/api/v1/books 404 in 123ms
+bookstore-app-1  |    Reload env: .env.local
+bookstore-app-1  |  ✓ Compiled in 2.3s (918 modules)
+bookstore-app-1  | process.env {
+bookstore-app-1  |   npm_config_user_agent: 'npm/10.8.2 node/v18.20.8 linux arm64 workspaces/false',
+bookstore-app-1  |   NODE_VERSION: '18.20.8',
+bookstore-app-1  |   HOSTNAME: 'ea1ea051beda',
+bookstore-app-1  |   YARN_VERSION: '1.22.22',
+bookstore-app-1  |   npm_node_execpath: '/usr/local/bin/node',
+bookstore-app-1  |   HOME: '/root',
+bookstore-app-1  |   npm_package_json: '/app/package.json',
+bookstore-app-1  |   npm_config_userconfig: '/root/.npmrc',
+bookstore-app-1  |   npm_config_local_prefix: '/app',
+bookstore-app-1  |   COLOR: '0',
+bookstore-app-1  |   npm_config_prefix: '/usr/local',
+bookstore-app-1  |   npm_config_npm_version: '10.8.2',
+bookstore-app-1  |   npm_config_cache: '/root/.npm',
+bookstore-app-1  |   npm_config_node_gyp: '/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js',
+bookstore-app-1  |   PATH: '/app/node_modules/.bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+bookstore-app-1  |   NODE: '/usr/local/bin/node',
+bookstore-app-1  |   npm_package_name: 'murabei-refactoring-test',
+bookstore-app-1  |   npm_lifecycle_script: 'next',
+bookstore-app-1  |   npm_package_version: '0.1.0',
+bookstore-app-1  |   npm_lifecycle_event: 'npx',
+bookstore-app-1  |   npm_config_globalconfig: '/usr/local/etc/npmrc',
+bookstore-app-1  |   npm_config_init_module: '/root/.npm-init.js',
+bookstore-app-1  |   PWD: '/app',
+bookstore-app-1  |   npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
+bookstore-app-1  |   npm_config_global_prefix: '/usr/local',
+bookstore-app-1  |   npm_command: 'exec',
+bookstore-app-1  |   INIT_CWD: '/app',
+bookstore-app-1  |   EDITOR: 'vi',
+bookstore-app-1  |   NODE_ENV: 'development',
+bookstore-app-1  |   NEXT_RUNTIME: 'nodejs',
+bookstore-app-1  |   NEXT_PRIVATE_WORKER: '1',
+bookstore-app-1  |   NODE_OPTIONS: ' --max-old-space-size=3918',
+bookstore-app-1  |   PORT: '3000',
+bookstore-app-1  |   __NEXT_PRIVATE_ORIGIN: 'http://localhost:3000',
+bookstore-app-1  |   __NEXT_PRIVATE_RUNTIME_TYPE: '',
+bookstore-app-1  |   npm_config_noproxy: '',
+bookstore-app-1  |   __NEXT_PROCESSED_ENV: 'true',
+bookstore-app-1  |   NEXT_PUBLIC_API_URL: 'http://localhost:7721',
+bookstore-app-1  |   RUST_MIN_STACK: '8388608'
+bookstore-app-1  | }
+bookstore-app-1  |  GET /books 200 in 920ms
+bookstore-app-1  |  ✓ Compiled /_not-found in 122ms (889 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 228ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 215ms (535 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 340ms
+bookstore-app-1  |  GET /favicon.ico 200 in 8ms
+bookstore-app-1  | process.env {
+bookstore-app-1  |   npm_config_user_agent: 'npm/10.8.2 node/v18.20.8 linux arm64 workspaces/false',
+bookstore-app-1  |   NODE_VERSION: '18.20.8',
+bookstore-app-1  |   HOSTNAME: 'ea1ea051beda',
+bookstore-app-1  |   YARN_VERSION: '1.22.22',
+bookstore-app-1  |   npm_node_execpath: '/usr/local/bin/node',
+bookstore-app-1  |   HOME: '/root',
+bookstore-app-1  |   npm_package_json: '/app/package.json',
+bookstore-app-1  |   npm_config_userconfig: '/root/.npmrc',
+bookstore-app-1  |   npm_config_local_prefix: '/app',
+bookstore-app-1  |   COLOR: '0',
+bookstore-app-1  |   npm_config_prefix: '/usr/local',
+bookstore-app-1  |   npm_config_npm_version: '10.8.2',
+bookstore-app-1  |   npm_config_cache: '/root/.npm',
+bookstore-app-1  |   npm_config_node_gyp: '/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js',
+bookstore-app-1  |   PATH: '/app/node_modules/.bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/app/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+bookstore-app-1  |   NODE: '/usr/local/bin/node',
+bookstore-app-1  |   npm_package_name: 'murabei-refactoring-test',
+bookstore-app-1  |   npm_lifecycle_script: 'next',
+bookstore-app-1  |   npm_package_version: '0.1.0',
+bookstore-app-1  |   npm_lifecycle_event: 'npx',
+bookstore-app-1  |   npm_config_globalconfig: '/usr/local/etc/npmrc',
+bookstore-app-1  |   npm_config_init_module: '/root/.npm-init.js',
+bookstore-app-1  |   PWD: '/app',
+bookstore-app-1  |   npm_execpath: '/usr/local/lib/node_modules/npm/bin/npm-cli.js',
+bookstore-app-1  |   npm_config_global_prefix: '/usr/local',
+bookstore-app-1  |   npm_command: 'exec',
+bookstore-app-1  |   INIT_CWD: '/app',
+bookstore-app-1  |   EDITOR: 'vi',
+bookstore-app-1  |   NODE_ENV: 'development',
+bookstore-app-1  |   NEXT_RUNTIME: 'nodejs',
+bookstore-app-1  |   NEXT_PRIVATE_WORKER: '1',
+bookstore-app-1  |   NODE_OPTIONS: ' --max-old-space-size=3918',
+bookstore-app-1  |   PORT: '3000',
+bookstore-app-1  |   __NEXT_PRIVATE_ORIGIN: 'http://localhost:3000',
+bookstore-app-1  |   __NEXT_PRIVATE_RUNTIME_TYPE: '',
+bookstore-app-1  |   npm_config_noproxy: '',
+bookstore-app-1  |   __NEXT_PROCESSED_ENV: 'true',
+bookstore-app-1  |   NEXT_PUBLIC_API_URL: 'http://localhost:7721',
+bookstore-app-1  |   RUST_MIN_STACK: '8388608'
+bookstore-app-1  | }
+bookstore-app-1  |  GET /books 200 in 145ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+bookstore-app-1  |  GET /favicon.ico 200 in 21ms
 bookstore-app-1  |  GET /favicon.ico 200 in 10ms
+bookstore-app-1  |  GET /books 200 in 46ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
+bookstore-app-1  |  GET /favicon.ico 200 in 25ms
+bookstore-app-1  |  GET /favicon.ico 200 in 12ms
+bookstore-app-1  |  GET /books 200 in 46ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 34ms
+bookstore-app-1  |  GET /favicon.ico 200 in 22ms
+bookstore-app-1  |  GET /favicon.ico 200 in 15ms
+bookstore-app-1  |  GET /books 200 in 46ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 18ms
+bookstore-app-1  |  GET /favicon.ico 200 in 15ms
+bookstore-app-1  |  GET /favicon.ico 200 in 12ms
+bookstore-app-1  |  ✓ Compiled in 218ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 156ms (920 modules)
+bookstore-app-1  |    Reload env: .env
+bookstore-app-1  |  ✓ Compiled in 137ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 125ms (920 modules)
+bookstore-app-1  |  GET /books 200 in 123ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 29ms
+bookstore-app-1  |  GET /favicon.ico 200 in 25ms
+bookstore-app-1  |  GET /favicon.ico 200 in 12ms
+bookstore-app-1  |  ✓ Compiled in 773ms (886 modules)
+bookstore-app-1  |  GET /books 200 in 450ms
+bookstore-app-1  |  ✓ Compiled /_not-found in 104ms (889 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 264ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 163ms (535 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 258ms
+bookstore-app-1  |  GET /favicon.ico 200 in 19ms
+bookstore-app-1  |  GET /books 200 in 118ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 23ms
+bookstore-app-1  |  GET /favicon.ico 200 in 24ms
+bookstore-app-1  |  GET /favicon.ico 200 in 9ms
+bookstore-app-1  |  ✓ Compiled in 135ms (920 modules)
+bookstore-app-1  |  GET /books 200 in 155ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
+bookstore-app-1  |  GET /favicon.ico 200 in 22ms
+bookstore-app-1  |  GET /favicon.ico 200 in 12ms
+bookstore-app-1  |  ✓ Compiled in 289ms (886 modules)
+bookstore-app-1  |  GET /books 200 in 188ms
+bookstore-app-1  |  ✓ Compiled /_not-found in 112ms (889 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 217ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 129ms (535 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 195ms
+bookstore-app-1  |  GET /favicon.ico 200 in 65ms
+bookstore-app-1  |  ✓ Compiled in 465ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 250ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 149ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 161ms (886 modules)
+bookstore-app-1  |  GET /books 200 in 204ms
+bookstore-app-1  |  ✓ Compiled /_not-found in 224ms (889 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 349ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 137ms (535 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 316ms
+bookstore-app-1  |  GET /favicon.ico 200 in 24ms
+bookstore-app-1  |  ✓ Compiled in 301ms (920 modules)
+bookstore-app-1  |  GET /books 200 in 504ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 88ms
+bookstore-app-1  |  GET /favicon.ico 200 in 54ms
+bookstore-app-1  |  GET /favicon.ico 200 in 17ms
+bookstore-app-1  |  ✓ Compiled in 187ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 252ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 133ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 189ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 149ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 131ms (920 modules)
+bookstore-app-1  |  GET /books 200 in 190ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 31ms
+bookstore-app-1  |  GET /favicon.ico 200 in 31ms
+bookstore-app-1  |  GET /favicon.ico 200 in 14ms
+bookstore-app-1  |  ✓ Compiled in 220ms (920 modules)
+bookstore-app-1  |  GET /books 200 in 225ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 78ms
+bookstore-app-1  |  GET /favicon.ico 200 in 33ms
+bookstore-app-1  |  GET /favicon.ico 200 in 11ms
+bookstore-app-1  |  ✓ Compiled in 145ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 413ms (886 modules)
+bookstore-app-1  |  ✓ Compiled in 382ms (886 modules)
+bookstore-app-1  |  GET /books 200 in 364ms
+bookstore-app-1  |  ✓ Compiled /_not-found in 110ms (889 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 236ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 365ms (535 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 449ms
+bookstore-app-1  |  GET /favicon.ico 200 in 26ms
+bookstore-app-1  |  ✓ Compiled in 500ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 272ms (920 modules)
+bookstore-app-1  |  ✓ Compiled in 293ms (397 modules)
+bookstore-app-1  |  ✓ Compiled in 117ms (397 modules)
+bookstore-app-1  |  ✓ Compiled in 295ms (886 modules)
+bookstore-app-1  |  ○ Compiling /authors ...
+bookstore-app-1  |  ✓ Compiled /authors in 546ms (892 modules)
+bookstore-app-1  |  ✓ Compiled in 543ms (902 modules)
+bookstore-app-1  |  ✓ Compiled in 810ms (902 modules)
+bookstore-app-1  |  ✓ Compiled in 192ms (902 modules)
+bookstore-app-1  |  ✓ Compiled in 91ms (399 modules)
+bookstore-app-1  |  ✓ Compiled in 170ms (902 modules)
+bookstore-app-1  |  ✓ Compiled in 342ms (902 modules)
+bookstore-app-1  |  GET /books 200 in 219ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 777ms (936 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 765ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 948ms
+bookstore-app-1  |  GET /favicon.ico 200 in 29ms
+bookstore-app-1  |  ✓ Compiled in 202ms (936 modules)
+bookstore-app-1  |  GET /books 200 in 167ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+bookstore-app-1  |  GET /favicon.ico 200 in 45ms
+bookstore-app-1  |  GET /favicon.ico 200 in 20ms
+bookstore-app-1  |  ✓ Compiled in 292ms (936 modules)
+bookstore-app-1  |  GET /books 200 in 100ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 36ms
+bookstore-app-1  |  GET /favicon.ico 200 in 26ms
+bookstore-app-1  |  GET /favicon.ico 200 in 22ms
+bookstore-app-1  |  ✓ Compiled in 237ms (401 modules)
+bookstore-app-1  |  GET /books 200 in 73ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 33ms
+bookstore-app-1  |  GET /favicon.ico 200 in 18ms
+bookstore-app-1  |  GET /favicon.ico 200 in 19ms
+bookstore-app-1  |  ✓ Compiled in 158ms (401 modules)
+bookstore-app-1  |  GET /books 200 in 62ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 40ms
+bookstore-app-1  |  GET /favicon.ico 200 in 28ms
+bookstore-app-1  |  GET /favicon.ico 200 in 11ms
+bookstore-app-1  |  ✓ Compiled in 251ms (936 modules)
+bookstore-app-1  |  GET /books 200 in 176ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 30ms
+bookstore-app-1  |  GET /favicon.ico 200 in 36ms
+bookstore-app-1  |  GET /favicon.ico 200 in 16ms
+bookstore-app-1  |  ✓ Compiled in 198ms (936 modules)
+bookstore-app-1  |  GET /books 200 in 126ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 28ms
+bookstore-app-1  |  GET /favicon.ico 200 in 39ms
+bookstore-app-1  |  GET /favicon.ico 200 in 46ms
+bookstore-app-1  |  ✓ Compiled in 275ms (936 modules)
+bookstore-app-1  |  GET /books 200 in 144ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 27ms
+bookstore-app-1  |  GET /favicon.ico 200 in 37ms
+bookstore-app-1  |  GET /favicon.ico 200 in 20ms
+bookstore-app-1  |  ✓ Compiled in 587ms (936 modules)
+bookstore-app-1  |  ✓ Compiled in 256ms (936 modules)
+bookstore-app-1  |  ✓ Compiled in 200ms (936 modules)
+bookstore-app-1  |  GET /books 200 in 163ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 129ms
+bookstore-app-1  |  GET /favicon.ico 200 in 61ms
+bookstore-app-1  |  GET /favicon.ico 200 in 14ms
+bookstore-app-1  |  ✓ Compiled in 408ms (922 modules)
+bookstore-app-1  |  ✓ Compiled in 300ms (922 modules)
+bookstore-app-1  |  ✓ Compiled in 171ms (922 modules)
+bookstore-app-1  |  GET /books 200 in 227ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 29ms
+bookstore-app-1  |  GET /favicon.ico 200 in 29ms
+bookstore-app-1  |  GET /favicon.ico 200 in 21ms

@@ -33,11 +33,11 @@ def test_should_list_books(db_sqlite):
 
   response = service.list()
 
-  assert len(response) > 0  
-  assert isinstance(response[0].id, int)
-  assert response[0].title is not None
-  assert response[0].author.title is not None
-  assert response[0].author.slug is not None
+  assert len(response.data) > 0  
+  assert isinstance(response.data[0].id, int)
+  assert response.data[0].title is not None
+  assert response.data[0].author.title is not None
+  assert response.data[0].author.slug is not None
 
 
 def test_should_create_book(db_sqlite):
@@ -46,7 +46,6 @@ def test_should_create_book(db_sqlite):
 
     book = _create_book_data("01")
     response = service.create(book)
-    print(response)
 
     assert isinstance(response.id, int)
     assert response.title == "book 01"
@@ -66,7 +65,6 @@ def test_should_update_book(db_sqlite):
 
     book = _create_book_data()
     response = service.create(book)
-    print(response)
 
     assert isinstance(response.id, int)
     assert response.title == "book"
@@ -82,7 +80,6 @@ def test_should_update_book(db_sqlite):
     updated_book = _create_book_data("02")
     updated_book["format"] = 'Compact Disc'
     response = service.update(response.id, updated_book)
-    print(response)
 
     assert isinstance(response.id, int)
     assert response.title == "book 02"

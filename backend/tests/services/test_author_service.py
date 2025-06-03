@@ -8,11 +8,11 @@ def test_should_list_authors(db_sqlite):
 
   response = service.list()
 
-  assert len(response) > 0
-  assert isinstance(response[0].id, int)
-  assert response[0].title is not None
-  assert response[0].slug is not None
-  assert response[0].biography is not None
+  assert len(response.data) > 0
+  assert isinstance(response.data[0].id, int)
+  assert response.data[0].title is not None
+  assert response.data[0].slug is not None
+  assert response.data[0].biography is not None
 
 
 def test_should_create_author(db_sqlite):
@@ -26,7 +26,6 @@ def test_should_create_author(db_sqlite):
   }
 
   response = service.create(author)
-  print(response)
 
   assert isinstance(response.id, int)
   assert response.title == "Guilherme"
@@ -45,7 +44,6 @@ def test_should_update_author(db_sqlite):
   }
 
   response = service.create(author)
-  print(response)
 
   assert isinstance(response.id, int)
   assert response.title == "Guilherme"
@@ -59,7 +57,6 @@ def test_should_update_author(db_sqlite):
   }
 
   response = service.update(response.id, author)
-  print(response)
 
   assert isinstance(response.id, int)
   assert response.title == "Guilherme 2"
