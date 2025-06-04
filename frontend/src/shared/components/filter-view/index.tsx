@@ -1,31 +1,49 @@
+import { useState, useEffect } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { useState } from "react";
+import { FilterInput } from "./types";
 
-export default function FilterView() {
-  const [inputs, setInputs] = useState([
-    {
-      label: "Search",
-      type: "text",
-      placeholder: "Search",
-      value: "",
-    },
-    {
-      label: "Author",
-      type: "text",
-      placeholder: "Author",
-      value: "",
-    },
-    {
-      label: "Publisher",
-      type: "text",
-      placeholder: "Publisher",
-      value: "",
-    },
-  ]);
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+export default function FilterView({
+  inputsData,
+  setFilters,
+  resetFilters,
+}: {
+  inputsData: FilterInput[];
+  setFilters: (filters: string) => void;
+  resetFilters: () => void;
+}) {
+
+  const [inputs, setInputs] = useState<FilterInput[]>(inputsData);
+  const debouncedInputs = useDebounce(inputs, 500);
+
+  useEffect(() => {
+    const filterString = debouncedInputs
+      .filter(input => input.value)
+      .map(input => `${input.column}:${input.value}`)
+      .join(';');
+
+    setFilters(filterString);
+  }, [debouncedInputs, setFilters]);
 
   const handleReset = () => {
-    setInputs(inputs.map(input => ({ ...input, value: "" })));
+    setInputs(inputs.map((input) => ({ ...input, value: "" })));
+    resetFilters();
   };
 
   const handleInputChange = (index: number, value: string) => {
@@ -48,7 +66,11 @@ export default function FilterView() {
             className="w-full md:w-1/2"
           />
         ))}
-        <Button variant="outline" className="w-full md:w-1/4" onClick={handleReset}>
+        <Button
+          variant="outline"
+          className="w-full md:w-1/4"
+          onClick={handleReset}
+        >
           Reset
         </Button>
       </div>

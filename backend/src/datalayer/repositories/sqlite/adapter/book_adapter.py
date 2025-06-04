@@ -77,4 +77,40 @@ class BookAdapter:
       toc=book.toc,
       editorial_reviews=book.editorial_reviews
     )
+  
+  @staticmethod
+  def dev_to_schema_from_filters(filters: dict) -> dict:
+    schema_mapping = {
+      "id": "id",
+      "title": "title",
+      "slug": "title_slug",
+      "isbn13": "isbn13",
+      "isbn10": "isbn10",
+      "price": "price",
+      "format": "format",
+      "publisher": "publisher",
+      "pubdate": "pubdate",
+      "edition": "edition",
+      "subjects": "subjects",
+      "lexile": "lexile",
+      "pages": "pages",
+      "dimensions": "dimensions",
+      "overview": "overview",
+      "excerpt": "excerpt",
+      "synopsis": "synopsis",
+      "toc": "toc",
+      "editorial_reviews": "editorial_reviews"
+    }
+    schema = {schema_key: filters.get(filter_key) for filter_key, schema_key in schema_mapping.items()}
 
+    author = filters.get("author", {})
+    schema.update({
+      "author": author.get("title"),
+      "author_id": author.get("id"),
+      "author_bio": author.get("biography"),
+      "author_slug": author.get("slug")
+    })
+
+    schema["authors"] = filters.get("authors")
+
+    return schema

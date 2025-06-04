@@ -1,7 +1,7 @@
 import { IBook } from "@/core/models/book.model";
 import { BookService } from "@/core/services/book.service";
 import { PaginatedResponse } from "@/shared/components/pagination-view/types";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback } from "react";
 
 export function useBooks() {
   const [response, setResponse] = useState<PaginatedResponse<IBook>>({
@@ -14,27 +14,43 @@ export function useBooks() {
     previous_page: 0,
     last_page: 0,
   });
+  const filters = useRef("");
   const loading = useRef(true);
   const firstRender = useRef(true);
   const [error, setError] = useState<string | null>(null);
 
-  async function fetchItems(page: number = 1) {
+  const fetchItems = useCallback(async (page: number = 1, filters?: string) => {
     try {
       loading.current = true;
-      const response = await new BookService().list(page);
+      const response = await new BookService().list(page, filters);
       setResponse(response as PaginatedResponse<IBook>);
       loading.current = false;
     } catch (error) {
       setError(error as string);
       loading.current = false;
     }
-  }
+  }, []);
+
+  const fetchItemsWithFilters = useCallback((newFilters: string) => {
+    if (newFilters) {
+      filters.current = newFilters;
+      fetchItems(1, newFilters);
+    }
+  }, []);
+
+  const resetFilters = useCallback(() => {
+    filters.current = "";
+    fetchItems(1);
+  }, []);
 
   return {
+    filters,
     firstRender,
     loading,
     response,
     error,
     fetchItems,
+    fetchItemsWithFilters,
+    resetFilters,
   };
 }

@@ -8,9 +8,10 @@ author_endpoints = Blueprint('authors', __name__, url_prefix='/api/v1')
 def get_all_authors():
     page = request.args.get("page", DEFAULT_PAGE, type=int)
     page_size = request.args.get("page_size", DEFAULT_PAGE_SIZE, type=int)
+    filters = request.args.get("filters", None, type=str)
 
     service = AuthorFactory.service()
-    authors = service.list(page=page, page_size=page_size)
+    authors = service.list(page=page, page_size=page_size, filters=filters)
 
     return jsonify(authors.model_dump())
 

@@ -38,12 +38,26 @@ class AuthorRepositorySqlite(AuthorRepositoryInterface):
 
   def list(self, 
            page: int = DEFAULT_PAGE, 
-           page_size: int = DEFAULT_PAGE_SIZE) -> PaginatedResponse[Author]:
+           page_size: int = DEFAULT_PAGE_SIZE,
+           filters: Optional[dict] = None) -> PaginatedResponse[Author]:
     offset = (page - 1) * page_size
 
-    total_count = self.db.get_total_count("author")
+    query = f"SELECT {self.columns_str} FROM author"
+    where = ""
+
+    if filters:
+      where = " WHERE "
+      for key, value in filters.items():
+        if value:
+          where += f"{key} like '%{value}%' AND "
+      where = where[:-5]
+      query += where + f" LIMIT {page_size} OFFSET {offset}"
+    else:
+      query += f" LIMIT {page_size} OFFSET {offset}"
+
+    total_count = self.db.get_total_count("author", where)
     results = self.db.execute(
-      f"SELECT {self.columns_str} FROM author LIMIT {page_size} OFFSET {offset}",
+      query,
       fetch=True  
     )
       

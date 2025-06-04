@@ -30,5 +30,8 @@ class DatabaseConnectionSqlite:
   def get_next_id(self, table: str) -> int:
     return self.execute(f"SELECT MAX(id) + 1 FROM {table}", fetch=True)[0][0]
 
-  def get_total_count(self, table: str) -> int:
-    return self.execute(f"SELECT COUNT(*) FROM {table}", fetch=True)[0][0]
+  def get_total_count(self, table: str, where: Optional[str] = None) -> int:
+    if where:
+      return self.execute(f"SELECT COUNT(*) FROM {table} {where}", fetch=True)[0][0]
+    else:
+      return self.execute(f"SELECT COUNT(*) FROM {table}", fetch=True)[0][0]

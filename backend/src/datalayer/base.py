@@ -13,7 +13,10 @@ class RepositoryInterface(ABC, Generic[T]):
     pass
 
   @abstractmethod
-  def list(self, page: int = DEFAULT_PAGE, page_size: int = DEFAULT_PAGE_SIZE) -> PaginatedResponse[T]:
+  def list(self, 
+           page: int = DEFAULT_PAGE, 
+           page_size: int = DEFAULT_PAGE_SIZE, 
+           filters: Optional[dict] = None) -> PaginatedResponse[T]:
     pass
 
   @abstractmethod

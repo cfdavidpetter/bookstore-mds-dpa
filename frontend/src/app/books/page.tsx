@@ -9,23 +9,58 @@ import FilterView from "@/shared/components/filter-view";
 import { useBooks } from "@/hooks/useBook";
 
 export default function Books() {
-  const { firstRender, response, loading, error, fetchItems } = useBooks();
+  const {
+    firstRender,
+    response,
+    loading,
+    error,
+    filters,
+    fetchItems,
+    fetchItemsWithFilters,
+    resetFilters,
+  } = useBooks();
 
   useEffect(() => {
     if (firstRender.current) {
       fetchItems();
       firstRender.current = false;
     }
-  }, [firstRender, fetchItems]);
+  }, [fetchItems, firstRender]);
 
   return (
     <div className="flex flex-col p-4">
       <h1 className="text-2xl font-bold">Books</h1>
       {loading.current && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      { !loading.current && (
+      {!loading.current && (
         <>
-          <FilterView />
+          <FilterView
+            inputsData={[
+              {
+                label: "Name",
+                type: "text",
+                placeholder: "Name",
+                value: "",
+                column: "title",
+              },
+              {
+                label: "Author",
+                type: "text",
+                placeholder: "Author",
+                value: "",
+                column: "author.title",
+              },
+              {
+                label: "ISBN-13",
+                type: "text",
+                placeholder: "ISBN-13",
+                value: "",
+                column: "isbn13",
+              },
+            ]}
+            setFilters={fetchItemsWithFilters}
+            resetFilters={resetFilters}
+          />
           <div className="flex justify-between">
             <TableView<IBook>
               data={response.data}
@@ -43,7 +78,7 @@ export default function Books() {
             />
           </div>
           <div className="mt-4">
-            {PaginationView<IBook>(response, fetchItems)}
+            {PaginationView<IBook>(response, fetchItems, filters.current)}
           </div>
         </>
       )}

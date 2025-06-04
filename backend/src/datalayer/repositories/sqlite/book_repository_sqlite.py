@@ -8,11 +8,8 @@ from src.datalayer.repositories.sqlite.adapter.book_adapter import BookAdapter
 from src.datalayer.repositories.pagination import DEFAULT_PAGE, DEFAULT_PAGE_SIZE, PaginatedResponse
 from src.domain.book import Book
 
-
-# Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 class BookRepositorySqlite(BookRepositoryInterface):
   def __init__(self, db: DatabaseConnectionSqlite):
@@ -39,12 +36,27 @@ class BookRepositorySqlite(BookRepositoryInterface):
 
   def list(self, 
            page: int = DEFAULT_PAGE, 
-           page_size: int = DEFAULT_PAGE_SIZE) -> PaginatedResponse[Book]:
+           page_size: int = DEFAULT_PAGE_SIZE,
+           filters: Optional[dict] = None) -> PaginatedResponse[Book]:
     offset = (page - 1) * page_size
+    
+    query = f"SELECT {self.columns_str} FROM book"
+    where = ""
 
-    total_count = self.db.get_total_count("book")
+    if filters:
+      schema_data_filters = BookAdapter.dev_to_schema_from_filters(filters)
+      where = " WHERE "
+      for key, value in schema_data_filters.items():
+        if value:
+          where += f"{key} like '%{value}%' AND "
+      where = where[:-5]
+      query += where + f" LIMIT {page_size} OFFSET {offset}"
+    else:
+      query += f" LIMIT {page_size} OFFSET {offset}"
+
+    total_count = self.db.get_total_count("book", where)
     results = self.db.execute(
-      f"SELECT {self.columns_str} FROM book LIMIT {page_size} OFFSET {offset}",
+      query,
       fetch=True
     )
 

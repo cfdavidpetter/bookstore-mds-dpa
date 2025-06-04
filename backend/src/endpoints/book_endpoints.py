@@ -8,9 +8,10 @@ book_endpoints = Blueprint('books', __name__, url_prefix='/api/v1')
 def get_all_books():
     page = request.args.get("page", DEFAULT_PAGE, type=int)
     page_size = request.args.get("page_size", DEFAULT_PAGE_SIZE, type=int)
+    filters = request.args.get("filters", None, type=str)
     
     service = BookFactory.service()
-    books = service.list(page=page, page_size=page_size)
+    books = service.list(page=page, page_size=page_size, filters=filters)
     
     return jsonify(books.model_dump())
 

@@ -11,17 +11,18 @@ import { PaginatedResponse } from "./types";
 
 export default function PaginationView<T>(
   response: PaginatedResponse<T>,
-  fetchItems: (page: number) => void
+  fetchItems: (page: number, filters?: string) => void,
+  filters: string
 ) {
   return (
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" onClick={() => fetchItems(response.previous_page)} /> 
+          <PaginationPrevious href="#" onClick={() => fetchItems(response.previous_page, filters)} /> 
         </PaginationItem>
         {response.current_page > 2 && (
           <PaginationItem>
-            <PaginationLink href="#" onClick={() => fetchItems(1)}>
+            <PaginationLink href="#" onClick={() => fetchItems(1, filters)}>
               <PaginationEllipsis />
             </PaginationLink>
           </PaginationItem>
@@ -30,7 +31,7 @@ export default function PaginationView<T>(
           <PaginationItem>
             <PaginationLink
               href="#"
-              onClick={() => fetchItems(response.current_page - 1)}
+              onClick={() => fetchItems(response.current_page - 1, filters)}
             >
               {response.current_page - 1}
             </PaginationLink>
@@ -45,7 +46,7 @@ export default function PaginationView<T>(
           <PaginationItem>
             <PaginationLink
               href="#"
-              onClick={() => fetchItems(response.current_page + 1)}
+              onClick={() => fetchItems(response.current_page + 1, filters)}
             >
               {response.current_page + 1}
             </PaginationLink>
@@ -53,13 +54,13 @@ export default function PaginationView<T>(
         )}
         {response.current_page < response.last_page - 1 && (
           <PaginationItem>
-            <PaginationLink href="#" onClick={() => fetchItems(response.last_page)}>
+            <PaginationLink href="#" onClick={() => fetchItems(response.last_page, filters)}>
               <PaginationEllipsis />
             </PaginationLink>
           </PaginationItem>
         )}
         <PaginationItem>
-          <PaginationNext href="#" onClick={() => fetchItems(response.next_page)} />
+          <PaginationNext href="#" onClick={() => fetchItems(response.next_page, filters)} />
         </PaginationItem>
       </PaginationContent>
     </Pagination>

@@ -1768,3 +1768,344 @@ bookstore-app-1  |  ✓ Compiled in 377ms (1179 modules)
 bookstore-app-1  |  GET /books 200 in 503ms
 bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 90ms
 bookstore-app-1  |  GET /favicon.ico 200 in 226ms
+bookstore-app-1  |  ✓ Compiled in 787ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 328ms (1131 modules)
+bookstore-app-1  |  GET /books 200 in 643ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 420ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 740ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 885ms
+bookstore-app-1  |  ✓ Compiled in 730ms (1165 modules)
+bookstore-app-1  |  ✓ Compiled in 614ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 668ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 266ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 685ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 357ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 419ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 701ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 385ms (599 modules)
+bookstore-app-1  |  ✓ Compiled in 471ms (599 modules)
+bookstore-app-1  |  ✓ Compiled in 896ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 335ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 1213ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 700ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 643ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1190ms
+bookstore-app-1  |  GET /favicon.ico 200 in 1027ms
+bookstore-app-1  |  ✓ Compiled in 401ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 494ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 78ms
+bookstore-app-1  |  GET /favicon.ico 200 in 53ms
+bookstore-app-1  |  ✓ Compiled in 982ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 212ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 80ms
+bookstore-app-1  |  GET /favicon.ico 200 in 57ms
+bookstore-app-1  |  ✓ Compiled in 597ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 325ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 97ms
+bookstore-app-1  |  GET /favicon.ico 200 in 65ms
+bookstore-app-1  |  ✓ Compiled in 784ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 385ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 723ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 236ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 74ms
+bookstore-app-1  |  GET /favicon.ico 200 in 53ms
+bookstore-app-1  |  ✓ Compiled in 906ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 338ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 421ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 641ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 608ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 642ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 502ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 399ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 376ms (1145 modules)
+bookstore-app-1  |  GET /books 500 in 74ms
+bookstore-app-1  |  ○ Compiling /_not-found ...
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 500 in 552ms
+bookstore-app-1  |  ✓ Compiled /_not-found in 733ms (1134 modules)
+bookstore-app-1  |  GET /_next/static/webpack/364a442778adc4e8.webpack.hot-update.json 404 in 969ms
+bookstore-app-1  |  GET /books 200 in 179ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 85ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 276ms (578 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 383ms
+bookstore-app-1  |  ✓ Compiled in 795ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 231ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 331ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 728ms
+bookstore-app-1  |  GET /favicon.ico 200 in 604ms
+bookstore-app-1  |  ✓ Compiled in 577ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 319ms (599 modules)
+bookstore-app-1  |  ✓ Compiled in 895ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 421ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 802ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 239ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 752ms (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1189ms
+bookstore-app-1  |  GET /favicon.ico 200 in 1074ms
+bookstore-app-1  |  GET /books 200 in 235ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 73ms
+bookstore-app-1  |  GET /favicon.ico 200 in 55ms
+bookstore-app-1  |  GET /books 200 in 145ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 71ms
+bookstore-app-1  |  GET /favicon.ico 200 in 52ms
+bookstore-app-1  |  ✓ Compiled in 942ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 241ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 331ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 744ms
+bookstore-app-1  |  GET /favicon.ico 200 in 618ms
+bookstore-app-1  |  GET /books 200 in 248ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 72ms
+bookstore-app-1  |  GET /favicon.ico 200 in 148ms
+bookstore-app-1  |  ✓ Compiled in 776ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 290ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 79ms
+bookstore-app-1  |  GET /favicon.ico 200 in 65ms
+bookstore-app-1  |  ✓ Compiled in 902ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 244ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 95ms
+bookstore-app-1  |  GET /favicon.ico 200 in 57ms
+bookstore-app-1  |  ✓ Compiled in 1101ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 911ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 463ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 539ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1020ms
+bookstore-app-1  |  GET /favicon.ico 200 in 815ms
+bookstore-app-1  |  GET /books 200 in 400ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 86ms
+bookstore-app-1  |  GET /favicon.ico 200 in 66ms
+bookstore-app-1  |  ✓ Compiled in 1059ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 778ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 350ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 480ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1023ms
+bookstore-app-1  |  GET /favicon.ico 200 in 857ms
+bookstore-app-1  |  ✓ Compiled in 1001ms (1165 modules)
+bookstore-app-1  |  GET /books 200 in 425ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 103ms
+bookstore-app-1  |  GET /favicon.ico 200 in 79ms
+bookstore-app-1  |  ✓ Compiled in 857ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 684ms (1165 modules)
+bookstore-app-1  |  ✓ Compiled in 598ms (1179 modules)
+bookstore-app-1  |  GET /books 500 in 294ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 120ms
+bookstore-app-1  |  GET /favicon.ico 200 in 54ms
+bookstore-app-1  |  ✓ Compiled in 739ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 329ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 237ms
+bookstore-app-1  |  GET /favicon.ico 200 in 72ms
+bookstore-app-1  |  GET /books 200 in 323ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 100ms
+bookstore-app-1  |  GET /favicon.ico 200 in 57ms
+bookstore-app-1  |  GET /books 200 in 142ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 81ms
+bookstore-app-1  |  GET /favicon.ico 200 in 75ms
+bookstore-app-1  |  ✓ Compiled in 996ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 237ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 95ms
+bookstore-app-1  |  GET /favicon.ico 200 in 69ms
+bookstore-app-1  |  ✓ Compiled in 781ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 867ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 439ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 318ms
+bookstore-app-1  |  GET /favicon.ico 200 in 134ms
+bookstore-app-1  |  GET /books 200 in 185ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 92ms
+bookstore-app-1  |  GET /favicon.ico 200 in 55ms
+bookstore-app-1  |  ✓ Compiled in 639ms (1165 modules)
+bookstore-app-1  |  GET /books 200 in 500ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 190ms
+bookstore-app-1  |  GET /favicon.ico 200 in 77ms
+bookstore-app-1  |  ✓ Compiled in 736ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 758ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 533ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 492ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 774ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 352ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 804ms (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1254ms
+bookstore-app-1  |  GET /favicon.ico 200 in 1050ms
+bookstore-app-1  |  ✓ Compiled in 988ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 440ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 95ms
+bookstore-app-1  |  GET /favicon.ico 200 in 66ms
+bookstore-app-1  |  GET /books 200 in 148ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 86ms
+bookstore-app-1  |  GET /favicon.ico 200 in 55ms
+bookstore-app-1  |  ✓ Compiled in 895ms (1165 modules)
+bookstore-app-1  |  GET /books 500 in 424ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 81ms
+bookstore-app-1  |  GET /favicon.ico 200 in 46ms
+bookstore-app-1  |  ✓ Compiled in 681ms (1165 modules)
+bookstore-app-1  |  GET /books 500 in 324ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 301ms
+bookstore-app-1  |  GET /favicon.ico 200 in 80ms
+bookstore-app-1  |  ✓ Compiled in 647ms (1165 modules)
+bookstore-app-1  |  GET /books 200 in 260ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 120ms
+bookstore-app-1  |  GET /favicon.ico 200 in 78ms
+bookstore-app-1  |  ✓ Compiled in 916ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 550ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 591ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 503ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 93ms
+bookstore-app-1  |  GET /favicon.ico 200 in 75ms
+bookstore-app-1  |  GET /books 200 in 305ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 114ms
+bookstore-app-1  |  GET /favicon.ico 200 in 63ms
+bookstore-app-1  |  ✓ Compiled in 476ms (1165 modules)
+bookstore-app-1  |  GET /books 200 in 1062ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 273ms
+bookstore-app-1  |  GET /favicon.ico 200 in 102ms
+bookstore-app-1  |  ✓ Compiled in 502ms (1165 modules)
+bookstore-app-1  |  ✓ Compiled in 541ms (1165 modules)
+bookstore-app-1  |  ✓ Compiled in 522ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 589ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 686ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 744ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 690ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 680ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 963ms (1131 modules)
+bookstore-app-1  |  GET /books 200 in 1282ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 809ms (1165 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 1176ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1350ms
+bookstore-app-1  |  GET /books 200 in 235ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 107ms
+bookstore-app-1  |  GET /favicon.ico 200 in 71ms
+bookstore-app-1  |  ✓ Compiled in 779ms (1165 modules)
+bookstore-app-1  |  GET /books 200 in 650ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 94ms
+bookstore-app-1  |  GET /favicon.ico 200 in 136ms
+bookstore-app-1  |  ✓ Compiled in 721ms (1165 modules)
+bookstore-app-1  |  GET /books 200 in 484ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 334ms
+bookstore-app-1  |  GET /favicon.ico 200 in 131ms
+bookstore-app-1  |  ✓ Compiled in 1268ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 898ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 627ms (1165 modules)
+bookstore-app-1  |  ✓ Compiled in 750ms (1131 modules)
+bookstore-app-1  |  ✓ Compiled in 873ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 494ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 557ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1151ms
+bookstore-app-1  |  GET /favicon.ico 200 in 1032ms
+bookstore-app-1  |  ✓ Compiled in 905ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 321ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 89ms
+bookstore-app-1  |  GET /favicon.ico 200 in 60ms
+bookstore-app-1  |  ✓ Compiled in 539ms (601 modules)
+bookstore-app-1  |  GET /books 200 in 191ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 86ms
+bookstore-app-1  |  GET /favicon.ico 200 in 58ms
+bookstore-app-1  |  ✓ Compiled in 1052ms (1179 modules)
+bookstore-app-1  |  GET /books 200 in 303ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 85ms
+bookstore-app-1  |  GET /favicon.ico 200 in 79ms
+bookstore-app-1  |  ✓ Compiled in 800ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 249ms (601 modules)
+bookstore-app-1  |  ✓ Compiled in 627ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 859ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 721ms (1179 modules)
+bookstore-app-1  |  ✓ Compiled in 603ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 599ms (1145 modules)
+bookstore-app-1  |  GET /books 200 in 437ms
+bookstore-app-1  |  ○ Compiling /favicon.ico ...
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 552ms (1134 modules)
+bookstore-app-1  |  ✓ Compiled (1165 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 1101ms
+bookstore-app-1  |  GET /favicon.ico 200 in 910ms
+bookstore-app-1  |  ✓ Compiled in 687ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 1072ms (1145 modules)
+bookstore-app-1  |  ✓ Compiled in 835ms (1149 modules)
+bookstore-app-1  |  ✓ Compiled in 520ms (1149 modules)
+bookstore-app-1  |  ✓ Compiled in 555ms (1149 modules)
+bookstore-app-1  |  ✓ Compiled in 360ms (1149 modules)
+bookstore-app-1  |  ✓ Compiled in 358ms (1149 modules)
+bookstore-app-1  |  ✓ Compiled in 505ms (1149 modules)
+bookstore-app-1  |  ○ Compiling / ...
+bookstore-app-1  |  ✓ Compiled / in 793ms (1144 modules)
+bookstore-app-1  |  GET / 307 in 1136ms
+bookstore-app-1  |  GET /books 200 in 193ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 315ms (587 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 441ms
+bookstore-app-1  |  ○ Compiling /_not-found ...
+bookstore-app-1  |  ✓ Compiled /_not-found in 596ms (1178 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 805ms
+bookstore-app-1  |  ✓ Compiled in 749ms (1192 modules)
+bookstore-app-1  |  ✓ Compiled in 905ms (1150 modules)
+bookstore-app-1  |  GET /authors 200 in 250ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 463ms (1139 modules)
+bookstore-app-1  |  ✓ Compiled (1170 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 913ms
+bookstore-app-1  |  GET /favicon.ico 200 in 710ms
+bookstore-app-1  |  ✓ Compiled in 905ms (1184 modules)
+bookstore-app-1  |  GET /authors 200 in 511ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 86ms
+bookstore-app-1  |  GET /favicon.ico 200 in 87ms
+bookstore-app-1  |  GET /authors 200 in 346ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 92ms
+bookstore-app-1  |  GET /favicon.ico 200 in 243ms
+bookstore-app-1  |  GET /books 200 in 537ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 187ms
+bookstore-app-1  |  GET /favicon.ico 200 in 129ms
+bookstore-app-1  |  GET /books 200 in 450ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 150ms
+bookstore-app-1  |  GET /favicon.ico 200 in 205ms
+bookstore-app-1  |  GET /books 200 in 281ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 92ms
+bookstore-app-1  |  GET /favicon.ico 200 in 213ms
+bookstore-app-1  |  ✓ Compiled in 1052ms (1150 modules)
+bookstore-app-1  |  GET /books 200 in 256ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 380ms (1139 modules)
+bookstore-app-1  |  ✓ Compiled (1170 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 838ms
+bookstore-app-1  |  GET /favicon.ico 200 in 731ms
+bookstore-app-1  |  ✓ Compiled in 673ms (1184 modules)
+bookstore-app-1  |  GET /books 200 in 577ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 120ms
+bookstore-app-1  |  GET /favicon.ico 200 in 70ms
+bookstore-app-1  |  GET /books 200 in 325ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 94ms
+bookstore-app-1  |  GET /favicon.ico 200 in 189ms
+bookstore-app-1  |  GET /books 200 in 252ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 93ms
+bookstore-app-1  |  GET /favicon.ico 200 in 220ms
+bookstore-app-1  |  GET /books 200 in 360ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 112ms
+bookstore-app-1  |  GET /favicon.ico 200 in 243ms
+bookstore-app-1  |  GET /books 200 in 333ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 90ms
+bookstore-app-1  |  GET /favicon.ico 200 in 71ms
+bookstore-app-1  |  GET /books 200 in 373ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 89ms
+bookstore-app-1  |  GET /favicon.ico 200 in 250ms
+bookstore-app-1  |  GET /books 200 in 342ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 94ms
+bookstore-app-1  |  GET /favicon.ico 200 in 83ms
+bookstore-app-1  |  GET /books 200 in 334ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 135ms
+bookstore-app-1  |  GET /favicon.ico 200 in 253ms
+bookstore-app-1  |  GET /books 200 in 362ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 138ms
+bookstore-app-1  |  GET /favicon.ico 200 in 290ms
+bookstore-app-1  |  GET /books 200 in 372ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 118ms
+bookstore-app-1  |  GET /favicon.ico 200 in 79ms
+bookstore-app-1  |  GET /books 200 in 275ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 184ms
+bookstore-app-1  |  GET /favicon.ico 200 in 103ms
+bookstore-app-1  |  GET /books 200 in 357ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 119ms
+bookstore-app-1  |  GET /favicon.ico 200 in 237ms
