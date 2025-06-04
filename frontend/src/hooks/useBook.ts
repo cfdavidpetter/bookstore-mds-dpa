@@ -1,34 +1,40 @@
 import { IBook } from "@/core/models/book.model";
 import { BookService } from "@/core/services/book.service";
-import { useEffect, useRef } from "react";
-import { useState } from "react";
+import { PaginatedResponse } from "@/shared/components/pagination-view/types";
+import { useRef, useState } from "react";
 
 export function useBooks() {
-  const isFirstRender = useRef(true);
-  const [items, setItems] = useState<IBook[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState<PaginatedResponse<IBook>>({
+    data: [],
+    total: 0,
+    per_page: 0,
+    current_page: 0,
+    next_page: 0,
+    from: 0,
+    previous_page: 0,
+    last_page: 0,
+  });
+  const loading = useRef(true);
+  const firstRender = useRef(true);
   const [error, setError] = useState<string | null>(null);
 
-  async function fetchItems() {
-    console.log('Fetching items...');
-    setLoading(true);
+  async function fetchItems(page: number = 1) {
     try {
-      const response = await new BookService().list();
-      console.log('Response:', response);
-      setItems(response.data);
+      loading.current = true;
+      const response = await new BookService().list(page);
+      setResponse(response as PaginatedResponse<IBook>);
+      loading.current = false;
     } catch (error) {
       setError(error as string);
-    } finally {
-      setLoading(false);
+      loading.current = false;
     }
   }
 
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      fetchItems();
-    }
-  }, []);
-
-  return { items, loading, error };
+  return {
+    firstRender,
+    loading,
+    response,
+    error,
+    fetchItems,
+  };
 }

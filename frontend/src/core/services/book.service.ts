@@ -1,10 +1,10 @@
-import { PaginatedResponse } from "@/shared/lib/pagination";
-import { requests } from "@/shared/lib/requests";
 import { IBook } from "../models/book.model";
 import { apiEndpoint } from "../constants";
+import { requests } from "@/shared/lib/requests";
+import { PaginatedResponse } from "@/shared/components/pagination-view/types";
 
 export class BookService {
-  list(): Promise<PaginatedResponse<IBook>> {
-    return requests.get(`${apiEndpoint.Books}`).then((r: PaginatedResponse<IBook>) => r);
+  list(page: number = 1): Promise<PaginatedResponse<IBook>> {
+    return requests.get(`${apiEndpoint.Books}?page=${page}`).then((r: PaginatedResponse<IBook>) => r);
   }
 }

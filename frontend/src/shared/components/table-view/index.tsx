@@ -9,6 +9,17 @@ import {
 } from "../ui/table";
 import { TableProps } from "./types";
 
+const getNestedValue = <T extends Record<string, unknown>>(obj: T, path: string): string | number | null => {
+  const parts = path.split('.');
+  const value = parts.reduce<unknown>((acc, part) => {
+    if (acc && typeof acc === 'object' && part in (acc as Record<string, unknown>)) {
+      return (acc as Record<string, unknown>)[part];
+    }
+    return null;
+  }, obj);
+  return value as string | number | null;
+}
+
 export default function TableView<T>({
   data,
   columns,
@@ -29,7 +40,7 @@ export default function TableView<T>({
           <TableRow key={index}>
             {columns.map((column) => (
               <TableCell key={column.header}>
-                {row[column.accessor as keyof T] as string}
+                {getNestedValue(row as Record<string, unknown>, column.accessor as string)}
               </TableCell>
             ))}
             {actions && <TableCell>{actions}</TableCell>}

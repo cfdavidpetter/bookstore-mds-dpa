@@ -10,10 +10,7 @@ export default function Authors() {
     { header: "Biography", accessor: "biography" },
   ];
 
-  const data: IAuthor[] = [
-    { title: "John Doe", biography: "John Doe is a software engineer" },
-    { title: "Jane Doe", biography: "Jane Doe is a software engineer" },
-  ];
+  const data: IAuthor[] = [];
 
   return (
     <div>
