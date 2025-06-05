@@ -1,0 +1,5 @@
+{
+  "typescript": {
+    "tsconfig": "cypress/tsconfig.json"
+  }
+} 

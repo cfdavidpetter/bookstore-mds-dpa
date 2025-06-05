@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Sidebar from "@/shared/components/sidebar";
+import Navigation from "@/shared/components/navigation";
 import { cn } from "@/shared/lib/utils";
 
 const geistSans = localFont({
@@ -34,7 +34,7 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <Sidebar />
+        <Navigation />
         <main className="sm:ml-14">
           {children}
         </main>

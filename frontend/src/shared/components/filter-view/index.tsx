@@ -59,6 +59,7 @@ export default function FilterView({
         {inputs.map((input, index) => (
           <Input
             key={input.label}
+            name={input.column}
             type={input.type}
             placeholder={input.placeholder}
             value={input.value}
@@ -67,6 +68,7 @@ export default function FilterView({
           />
         ))}
         <Button
+          name="reset-filters"
           variant="outline"
           className="w-full md:w-1/4"
           onClick={handleReset}

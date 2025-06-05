@@ -4,23 +4,19 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "../ui/sheet";
-import { MenuIcon, Users, LibraryBig } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+import { MenuIcon } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "../ui/tooltip";
 
-export default function Sidebar() {
-  const routes = [
-    {
-      href: "/books",
-      icon: LibraryBig,
-      label: "Books",
-    },
-    {
-      href: "/authors",
-      icon: Users,
-      label: "Authors",
-    },
-  ];
-
+export default function Sidebar({
+  routes,
+}: {
+  routes: { href: string; icon: React.ElementType; label: string }[];
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -31,7 +27,7 @@ export default function Sidebar() {
             <TooltipProvider key={route.href}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link 
+                  <Link
                     href={route.href}
                     className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
                   >
@@ -59,7 +55,7 @@ export default function Sidebar() {
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <nav className="grid gap-6 text-lg font-medium">
                 {routes.map((route) => (
-                  <Link 
+                  <Link
                     key={route.href}
                     href={route.href}
                     onClick={() => setIsOpen(false)}

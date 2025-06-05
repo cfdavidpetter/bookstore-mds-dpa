@@ -17,9 +17,15 @@ export default function PaginationView<T>(
   return (
     <Pagination>
       <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious href="#" onClick={() => fetchItems(response.previous_page, filters)} /> 
-        </PaginationItem>
+        {(response.current_page > 1 || response.current_page !== 1) && (
+          <PaginationItem>
+            <PaginationPrevious
+              title="previous-page"
+              href="#"
+              onClick={() => fetchItems(response.previous_page, filters)}
+            />
+          </PaginationItem>
+        )}
         {response.current_page > 2 && (
           <PaginationItem>
             <PaginationLink href="#" onClick={() => fetchItems(1, filters)}>
@@ -54,14 +60,25 @@ export default function PaginationView<T>(
         )}
         {response.current_page < response.last_page - 1 && (
           <PaginationItem>
-            <PaginationLink href="#" onClick={() => fetchItems(response.last_page, filters)}>
+            <PaginationLink
+              href="#"
+              onClick={() => fetchItems(response.last_page, filters)}
+            >
               <PaginationEllipsis />
             </PaginationLink>
           </PaginationItem>
         )}
-        <PaginationItem>
-          <PaginationNext href="#" onClick={() => fetchItems(response.next_page, filters)} />
-        </PaginationItem>
+        {((response.current_page > 1 &&
+          response.current_page !== response.last_page) ||
+          (response.current_page === 1 && response.last_page > 1)) && (
+          <PaginationItem>
+            <PaginationNext
+              title="next-page"
+              href="#"
+              onClick={() => fetchItems(response.next_page, filters)}
+            />
+          </PaginationItem>
+        )}
       </PaginationContent>
     </Pagination>
   );
