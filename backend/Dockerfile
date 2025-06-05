@@ -45,7 +45,7 @@ COPY . .
 RUN chmod +x entrypoint.sh
 
 # Expose the port on which the Flask app will run
-EXPOSE 5000
+EXPOSE 80
 
 # Production entrypoint
-ENTRYPOINT ["./entrypoint.sh"]
+CMD ["flask", "--app", "app", "run", "--host=0.0.0.0", "--port=80"]

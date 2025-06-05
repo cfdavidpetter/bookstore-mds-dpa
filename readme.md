@@ -69,6 +69,16 @@ cd _docker-compose
 - Backend: http://localhost:7721
 
 
+### Demo deployed
+- Frontend: https://bookstore-mds-dpa-frontend.onrender.com/
+- Backend: https://bookstore-mds-dpa-backend.onrender.com/
+
+
+### DockerHub
+- Frontend: https://hub.docker.com/r/cfdavidpetter/bookstore-mds-dpa-frontend
+- Backend: https://hub.docker.com/r/cfdavidpetter/bookstore-mds-dpa-backend
+
+
 ### Observações
 - Certifique-se de que as portas 7720 e 7721 estejam disponíveis
 - Em caso de problemas com permissões, pode ser necessário usar `sudo` nos comandos Docker
