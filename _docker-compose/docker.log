@@ -1,137 +1,99 @@
 #0 building with "desktop-linux" instance using docker driver
 
 #1 [bookstore-app internal] load build definition from Dockerfile
-#1 transferring dockerfile: 331B done
+#1 DONE 0.0s
+
+#1 [bookstore-app internal] load build definition from Dockerfile
+#1 transferring dockerfile: 770B done
+#1 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)
+#1 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 22)
 #1 DONE 0.0s
 
 #2 [bookstore-api internal] load build definition from Dockerfile
-#2 transferring dockerfile: 551B done
+#2 transferring dockerfile: 1.19kB done
+#2 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 2)
+#2 WARN: FromAsCasing: 'as' and 'FROM' keywords' casing do not match (line 28)
 #2 DONE 0.0s
 
 #3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
-#3 ...
+#3 DONE 1.0s
 
 #4 [bookstore-app internal] load metadata for docker.io/library/node:18
-#4 DONE 1.3s
+#4 DONE 1.0s
 
-#5 [bookstore-app internal] load .dockerignore
+#5 [bookstore-api internal] load .dockerignore
 #5 transferring context: 2B done
 #5 DONE 0.0s
 
-#6 [bookstore-app 1/6] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
+#6 [bookstore-api development 1/6] FROM docker.io/library/python:3.9-slim@sha256:657a140aae5f8eb61c69c3df950fade52f1a7924f88612071acccb863a9efe0f
 #6 DONE 0.0s
 
-#7 [bookstore-app internal] load build context
-#7 ...
+#7 [bookstore-app internal] load .dockerignore
+#7 transferring context: 333B done
+#7 DONE 0.0s
 
-#3 [bookstore-api internal] load metadata for docker.io/library/python:3.9-slim
-#3 DONE 2.0s
-
-#7 [bookstore-app internal] load build context
-#7 ...
-
-#8 [bookstore-api internal] load .dockerignore
-#8 transferring context: 2B done
+#8 [bookstore-app development 1/6] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d391e6ec1d224d96c693a8a4d943498556716d3783
 #8 DONE 0.0s
 
-#7 [bookstore-app internal] load build context
-#7 ...
-
 #9 [bookstore-api internal] load build context
-#9 transferring context: 5.21MB 0.2s done
-#9 DONE 0.2s
+#9 transferring context: 300.07kB 0.1s done
+#9 DONE 0.1s
 
-#7 [bookstore-app internal] load build context
-#7 ...
+#10 [bookstore-api development 2/6] WORKDIR /app
+#10 CACHED
 
-#10 [bookstore-api 1/4] FROM docker.io/library/python:3.9-slim@sha256:657a140aae5f8eb61c69c3df950fade52f1a7924f88612071acccb863a9efe0f
-#10 resolve docker.io/library/python:3.9-slim@sha256:657a140aae5f8eb61c69c3df950fade52f1a7924f88612071acccb863a9efe0f done
-#10 sha256:2fbdd9ef24b8073f9b8789eeb7cf7b69fedb88f8ce6c75a4fefe52cb5a3b842f 250B / 250B 0.5s done
-#10 sha256:657a140aae5f8eb61c69c3df950fade52f1a7924f88612071acccb863a9efe0f 10.41kB / 10.41kB done
-#10 sha256:0bb1a7a1fcbb93f9db1d97d1eb2aa90956929e08064cdbd01f289220bed2bdca 1.75kB / 1.75kB done
-#10 sha256:e03518d9406917ffadf47ff653744fd34aff6babbb8b786795ad09890a41d207 5.30kB / 5.30kB done
-#10 sha256:7840cd825272881c40e91120a55b4d26f7e5829aa530409b56fbc4831b2f944c 3.33MB / 3.33MB 0.3s done
-#10 sha256:17505ccc358e867fae756b47794e9cc494d4593818c33c2e5e91c94ec9388a53 14.85MB / 14.85MB 0.7s done
-#10 extracting sha256:7840cd825272881c40e91120a55b4d26f7e5829aa530409b56fbc4831b2f944c 0.2s done
-#10 extracting sha256:17505ccc358e867fae756b47794e9cc494d4593818c33c2e5e91c94ec9388a53 1.0s done
-#10 extracting sha256:2fbdd9ef24b8073f9b8789eeb7cf7b69fedb88f8ce6c75a4fefe52cb5a3b842f done
-#10 DONE 1.7s
+#11 [bookstore-api development 3/6] COPY requirements.txt .
+#11 CACHED
 
-#7 [bookstore-app internal] load build context
-#7 transferring context: 123.37MB 2.5s done
-#7 DONE 2.7s
-
-#11 [bookstore-api 2/4] WORKDIR /app
-#11 DONE 0.3s
-
-#12 [bookstore-app 2/6] RUN apt-get update && apt-get install -y   libgtk2.0-0 libgtk-3-0 libgbm-dev   libnotify-dev libnss3 libxss1 libasound2   libxtst6 xauth xvfb
+#12 [bookstore-api development 4/6] RUN pip install -r requirements.txt
 #12 CACHED
 
-#13 [bookstore-app 3/6] WORKDIR /app
-#13 CACHED
+#13 [bookstore-app internal] load build context
+#13 transferring context: 7.65kB 0.7s done
+#13 DONE 0.7s
 
-#14 [bookstore-app 4/6] COPY package*.json ./
-#14 DONE 0.1s
+#14 [bookstore-app development 2/6] RUN apt-get update && apt-get install -y   libgtk2.0-0 libgtk-3-0 libgbm-dev   libnotify-dev libnss3 libxss1 libasound2   libxtst6 xauth xvfb
+#14 CACHED
 
-#15 [bookstore-api 3/4] COPY . .
-#15 DONE 0.5s
+#15 [bookstore-app development 3/6] WORKDIR /app
+#15 CACHED
 
-#16 [bookstore-app 5/6] RUN npm install
-#16 ...
+#16 [bookstore-app development 4/6] COPY package*.json ./
+#16 CACHED
 
-#17 [bookstore-api 4/4] RUN chmod +x entrypoint.sh
-#17 DONE 0.1s
+#17 [bookstore-app development 5/6] RUN npm install
+#17 CACHED
 
-#18 [bookstore-api] exporting to image
-#18 exporting layers
-#18 exporting layers 0.2s done
-#18 writing image sha256:1175fefde0bdc614dc4cb27e6eabcb08e85536562320338796e688bc05e05f01
-#18 writing image sha256:1175fefde0bdc614dc4cb27e6eabcb08e85536562320338796e688bc05e05f01 done
-#18 naming to docker.io/library/docker-compose-bookstore-api done
-#18 DONE 0.2s
+#18 [bookstore-app development 6/6] COPY . .
+#18 DONE 0.1s
 
-#19 [bookstore-api] resolving provenance for metadata file
-#19 DONE 0.0s
+#19 [bookstore-api development 5/6] COPY . .
+#19 ...
 
-#16 [bookstore-app 5/6] RUN npm install
-#16 2.169 npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
-#16 3.034 npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-#16 4.625 npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
-#16 4.849 npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
-#16 4.869 npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
-#16 5.421 npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
-#16 6.165 npm warn deprecated @cypress/react18@2.0.1: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-#16 25.79 
-#16 25.79 added 852 packages, and audited 853 packages in 26s
-#16 25.79 
-#16 25.79 222 packages are looking for funding
-#16 25.79   run `npm fund` for details
-#16 25.82 
-#16 25.82 1 low severity vulnerability
-#16 25.82 
-#16 25.82 To address all issues (including breaking changes), run:
-#16 25.82   npm audit fix --force
-#16 25.82 
-#16 25.82 Run `npm audit` for details.
-#16 25.82 npm notice
-#16 25.82 npm notice New major version of npm available! 10.8.2 -> 11.4.1
-#16 25.82 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
-#16 25.82 npm notice To update run: npm install -g npm@11.4.1
-#16 25.82 npm notice
-#16 DONE 26.3s
+#20 [bookstore-app] exporting to image
+#20 exporting layers 0.0s done
+#20 writing image sha256:41ad3c47d53782c56f247f8a0369fc4d69848ef2093cd21d2c175a52b87d4f31 done
+#20 naming to docker.io/library/docker-compose-bookstore-app done
+#20 DONE 0.0s
 
-#20 [bookstore-app 6/6] COPY . .
-#20 DONE 8.8s
+#21 [bookstore-app] resolving provenance for metadata file
+#21 DONE 0.0s
 
-#21 [bookstore-app] exporting to image
-#21 exporting layers
-#21 exporting layers 7.9s done
-#21 writing image sha256:2431d025cf875c1c1d84e5593ca48cb2a65b959c0c6529e1e3f54c57595aba28 done
-#21 naming to docker.io/library/docker-compose-bookstore-app done
-#21 DONE 7.9s
+#19 [bookstore-api development 5/6] COPY . .
+#19 DONE 0.9s
 
-#22 [bookstore-app] resolving provenance for metadata file
-#22 DONE 0.0s
+#22 [bookstore-api development 6/6] RUN chmod +x entrypoint.sh
+#22 DONE 0.2s
+
+#23 [bookstore-api] exporting to image
+#23 exporting layers 0.2s done
+#23 writing image sha256:049eeef1c6540f35ecfdc9f4f68f14419961077e25bdd15a0b77e587b6d76a74
+#23 writing image sha256:049eeef1c6540f35ecfdc9f4f68f14419961077e25bdd15a0b77e587b6d76a74 done
+#23 naming to docker.io/library/docker-compose-bookstore-api done
+#23 DONE 0.2s
+
+#24 [bookstore-api] resolving provenance for metadata file
+#24 DONE 0.0s
 Attaching to bookstore-api-1, bookstore-app-1
 bookstore-app-1  | 
 bookstore-app-1  | > murabei-refactoring-test@0.1.0 dev
@@ -144,48 +106,22 @@ bookstore-app-1  |   - Local:        http://localhost:3000
 bookstore-app-1  |   - Environments: .env
 bookstore-app-1  | 
 bookstore-app-1  |  ✓ Starting...
-bookstore-app-1  |  ✓ Ready in 2.7s
+bookstore-app-1  |  ✓ Ready in 1628ms
 bookstore-app-1  |  ○ Compiling /books ...
-bookstore-app-1  |  ✓ Compiled /books in 3.7s (937 modules)
-bookstore-app-1  |  GET /books 500 in 4514ms
+bookstore-app-1  |  ✓ Compiled /books in 2.7s (921 modules)
+bookstore-app-1  |  GET /books 200 in 3122ms
 bookstore-app-1  |  ○ Compiling /favicon.ico ...
-bookstore-app-1  |  ✓ Compiled /favicon.ico in 4.7s (939 modules)
-bookstore-app-1  |  GET /favicon.ico 200 in 4130ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 4153ms
-bookstore-app-1  |  GET /books 500 in 238ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 78ms
-bookstore-app-1  |  GET /favicon.ico 200 in 20ms
-bookstore-app-1  |  GET /favicon.ico 200 in 13ms
-bookstore-app-1  |  ✓ Compiled in 273ms (413 modules)
-bookstore-app-1  |  GET /books 500 in 68ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 49ms
-bookstore-app-1  |  GET /favicon.ico 200 in 23ms
-bookstore-app-1  |  GET /favicon.ico 200 in 8ms
-bookstore-app-1  |  ✓ Compiled in 123ms (413 modules)
-bookstore-app-1  |  GET /books 500 in 33ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
-bookstore-app-1  |  GET /favicon.ico 200 in 11ms
+bookstore-app-1  |  ✓ Compiled /favicon.ico in 954ms (952 modules)
+bookstore-app-1  |  GET /favicon.ico 200 in 695ms
 bookstore-app-1  |  GET /favicon.ico 200 in 15ms
-bookstore-app-1  |  ✓ Compiled in 797ms (955 modules)
-bookstore-app-1  |  GET /books 200 in 197ms
-bookstore-app-1  |  GET /books 200 in 182ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 22ms
-bookstore-app-1  |  GET /favicon.ico 200 in 61ms
-bookstore-app-1  |  GET /favicon.ico 200 in 16ms
-bookstore-app-1  |  ✓ Compiled in 204ms (955 modules)
-bookstore-app-1  |  ✓ Compiled in 191ms (955 modules)
-bookstore-app-1  |  ✓ Compiled in 175ms (955 modules)
-bookstore-app-1  |  ✓ Compiled in 432ms (955 modules)
-bookstore-app-1  |  ✓ Compiled in 272ms (955 modules)
-bookstore-app-1  |  ○ Compiling /_error ...
-bookstore-app-1  |  GET /books 500 in 17ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 500 in 18ms
-bookstore-app-1  |  ✓ Compiled /_error in 362ms (1166 modules)
-bookstore-app-1  |  GET /books 200 in 184ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 36ms
-bookstore-app-1  |  GET /favicon.ico 200 in 63ms
-bookstore-app-1  |  GET /favicon.ico 200 in 13ms
-bookstore-app-1  |  GET /books 200 in 35ms
-bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 21ms
-bookstore-app-1  |  GET /favicon.ico 200 in 43ms
-bookstore-app-1  |  GET /favicon.ico 200 in 11ms
+bookstore-app-1  |  ○ Compiling /_not-found ...
+bookstore-app-1  |  ✓ Compiled /_not-found in 555ms (941 modules)
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 730ms
+bookstore-app-1  |  GET /books 200 in 74ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 25ms
+bookstore-app-1  |  GET /favicon.ico 200 in 39ms
+bookstore-app-1  |  GET /favicon.ico 200 in 22ms
+bookstore-app-1  |  GET /books 200 in 106ms
+bookstore-app-1  |  GET /.well-known/appspecific/com.chrome.devtools.json 404 in 66ms
+bookstore-app-1  |  GET /favicon.ico 200 in 33ms
+bookstore-app-1  |  GET /favicon.ico 200 in 14ms
