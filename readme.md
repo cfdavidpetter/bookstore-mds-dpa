@@ -54,7 +54,7 @@ bookstore-mds-dpa/
 
 1. Clone o repositório:
 ```bash
-git clone [URL_DO_REPOSITÓRIO]
+git clone https://github.com/cfdavidpetter/bookstore-mds-dpa
 cd bookstore-mds-dpa
 ```
 
